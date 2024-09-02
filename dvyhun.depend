@@ -1,0 +1,87 @@
+# depslib dependency file v1.0
+1552210318 source:f:\c++ uroku\dvyhun\main.cpp
+	<iostream>
+	<allegro.h>
+	<cstdlib>
+	<stdio.h>
+	<winalleg.h>
+	<cmath>
+	<string>
+	<sstream>
+	"include/bocka.h"
+	"include/basein.h"
+	"include/klaviatura.h"
+
+1550127167 f:\c++ uroku\dvyhun\include\povna-stroka.h
+
+1550389499 f:\c++ uroku\dvyhun\include\setka.h
+
+1444805291 f:\c++ uroku\dvyhun\include\obektu.h
+	"obektu/palka.h"
+	"obektu/kvadrat.h"
+	"obektu/trukutnuk.h"
+	"obektu/L_vlivo.h"
+	"obektu/L_vpravo.h"
+	"obektu/Z_vlivo.h"
+	"obektu/Z_vpravo.h"
+
+1445163755 f:\c++ uroku\dvyhun\include\obektu\palka.h
+
+1445108952 f:\c++ uroku\dvyhun\include\obektu\kvadrat.h
+
+1445786415 f:\c++ uroku\dvyhun\include\obektu\trukutnuk.h
+
+1445167372 f:\c++ uroku\dvyhun\include\obektu\l_vlivo.h
+
+1445109311 f:\c++ uroku\dvyhun\include\obektu\l_vpravo.h
+
+1445163879 f:\c++ uroku\dvyhun\include\obektu\z_vlivo.h
+
+1445163918 f:\c++ uroku\dvyhun\include\obektu\z_vpravo.h
+
+1552202246 f:\c++ uroku\dvyhun\include\klaviatura.h
+
+1444808231 f:\c++ uroku\dvyhun\include\random.h
+
+1552124653 f:\c++ uroku\dvyhun\include\bocka.h
+
+1552202987 f:\c++ uroku\dvyhun\include\basein.h
+
+1552178140 source:f:\Новая папка\main.cpp
+	<iostream>
+	<allegro.h>
+	<cstdlib>
+	<stdio.h>
+	<winalleg.h>
+	<cmath>
+	<string>
+	<sstream>
+	"include/bocka.h"
+	"include/basein.h"
+	"include/klaviatura.h"
+
+1552178156 f:\Новая папка\include\bocka.h
+
+1552178154 f:\Новая папка\include\basein.h
+
+1552178156 f:\Новая папка\include\klaviatura.h
+
+1561480099 source:d:\двигун\main.cpp
+	<iostream>
+	<allegro.h>
+	<cstdlib>
+	<stdio.h>
+	<winalleg.h>
+	<cmath>
+	<string>
+	<sstream>
+	"include/bocka.h"
+	"include/basein.h"
+	"include/klaviatura.h"
+
+1552174556 d:\двигун\include\bocka.h
+
+1552174554 d:\двигун\include\basein.h
+
+1552174556 d:\двигун\include\klaviatura.h
+
