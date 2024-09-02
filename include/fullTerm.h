@@ -1,4 +1,4 @@
-void povna_stroka()
+void fullTerm()
 {
 
 int y,m;

@@ -4,15 +4,11 @@
 //*************************************************************************************
 //*************************************************************************************
 //*************************************************************************************
-//Малює палку горизонтально або вертикально
-void trukutnuk(int x, int y, int polojenna, int pole)
+//пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+void triangle(int x, int y, int polojenna, int pole)
 {
 
 const int HURUNA_ELEMENTA=KLITUNKA-4;
-//y=1;
-//xxx=0;
-//yyy = 0;
-//pole = 1;
 
 if (pole==0)
 {
@@ -27,9 +23,9 @@ y =  2+(KLITUNKA*y);
 
                                          //
                                          //  X
-                             //Положення // XXX
+                             //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ // XXX
 
-if (polojenna==0)//Положення трикутника до гори
+if (polojenna==0)//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ
 {               y+=KLITUNKA;
                 rectfill(kopy_buffer0, x, y, x+HURUNA_ELEMENTA, y+HURUNA_ELEMENTA, 0x000000);
                 rectfill(kopy_buffer0, x+2, y+2, x+HURUNA_ELEMENTA-2, y+HURUNA_ELEMENTA-2, 0xf0f00f);
@@ -48,8 +44,8 @@ if (polojenna==0)//Положення трикутника до гори
 
 
                                          // XXX
-                             //Положення //  X
-if (polojenna==1)//Положення трикутника до низу
+                             //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ //  X
+if (polojenna==1)//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ
 {
                 rectfill(kopy_buffer0, x, y, x+HURUNA_ELEMENTA, y+HURUNA_ELEMENTA, 0x000000);
                 rectfill(kopy_buffer0, x+2, y+2, x+HURUNA_ELEMENTA-2, y+HURUNA_ELEMENTA-2, 0xf0f00f);
@@ -68,8 +64,8 @@ if (polojenna==1)//Положення трикутника до низу
 }
                                          //  X
                                          // XX
-                             //Положення //  X
-if (polojenna==2)//Положення трикутника в ЛІВО
+                             //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ //  X
+if (polojenna==2)//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ ЛІпїЅпїЅ
 {               y+=KLITUNKA;
                 rectfill(kopy_buffer0, x, y, x+HURUNA_ELEMENTA, y+HURUNA_ELEMENTA, 0x000000);
                 rectfill(kopy_buffer0, x+2, y+2, x+HURUNA_ELEMENTA-2, y+HURUNA_ELEMENTA-2, 0xf0f00f);
@@ -90,9 +86,9 @@ if (polojenna==2)//Положення трикутника в ЛІВО
 
                                          //  X
                                          //  XX
-                             //Положення //  X
+                             //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ //  X
 
-if (polojenna==3)//Положення трикутника в право
+if (polojenna==3)//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ
 {
 
 
@@ -164,33 +160,33 @@ if (polojenna==3)//Положення трикутника в право
 //*************************************************************************************
 //*************************************************************************************
 //*************************************************************************************
-//Перевіряє коли фігура палка дійде до кінця
-int trukutnuk_proverka(int a,int b)//а - положення
-                               //b - з якої сторони перевіряти 0- знизу
-                                //                             1- зліва
-                                //                             2- зправа
-                                //                             10- з трьох сторін
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ
+int triangleРЎheck(int a,int b)//пїЅ - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+                               //b - пїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ 0- пїЅпїЅпїЅпїЅпїЅ
+                                //                             1- пїЅпїЅпїЅпїЅ
+                                //                             2- пїЅпїЅпїЅпїЅпїЅпїЅ
+                                //                             10- пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 {
 
 //palka(vboku, krok, 0, 0);
-//13617097 колір сітки
-//14540253 колір фона
+//13617097 пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
+//14540253 пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 
-if (a==0)//перевірка   трикутника обернутого до гори
+if (a==0)//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ   пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ
 {
 
-if(b==0 || b==10){//перевірка з низу
+if(b==0 || b==10){//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ
 
  if (getpixel(kopy_buffer0, vboku*KLITUNKA+(KLITUNKA/2), (krok+2)*KLITUNKA+(KLITUNKA/2))!=0xa0fded) return 1;
   if (getpixel(kopy_buffer0, (vboku+1)*KLITUNKA+(KLITUNKA/2), (krok+2)*KLITUNKA+(KLITUNKA/2))!=0xa0fded) return 1;
   if (getpixel(kopy_buffer0, (vboku+2)*KLITUNKA+(KLITUNKA/2), (krok+2)*KLITUNKA+(KLITUNKA/2))!=0xa0fded) return 1;
 }
-if(b==1 || b==10){ //перевірка з ліва
+if(b==1 || b==10){ //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅ
  if (getpixel(kopy_buffer0, vboku*KLITUNKA+(KLITUNKA/2), krok*KLITUNKA+(KLITUNKA/2))!=0xa0fded) return 1;
   if (getpixel(kopy_buffer0,  (vboku-1)*KLITUNKA+(KLITUNKA/2), (krok+1)*KLITUNKA+(KLITUNKA/2))!=0xa0fded) return 1;
 }
 
-if(b==2 || b==10){//перевірка з права
+if(b==2 || b==10){//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ
 if (getpixel(kopy_buffer0, (vboku+2)*KLITUNKA+(KLITUNKA/2), krok*KLITUNKA+(KLITUNKA/2))!=0xa0fded) return 1;
   if (getpixel(kopy_buffer0,  (vboku+3)*KLITUNKA+(KLITUNKA/2), (krok+1)*KLITUNKA+(KLITUNKA/2))!=0xa0fded) return 1;
 }
@@ -202,21 +198,21 @@ if (getpixel(kopy_buffer0, (vboku+2)*KLITUNKA+(KLITUNKA/2), krok*KLITUNKA+(KLITU
 }
 
 
-if (a==1) //перевірка трикутника обернутого в низ
+if (a==1) //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅ
 {
-                 if(b==0 || b==10){//Повірка з низу
+                 if(b==0 || b==10){//пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ
                                 if (getpixel(kopy_buffer0, vboku*KLITUNKA+(KLITUNKA/2), (krok+1)*KLITUNKA+(KLITUNKA/2))!=0xa0fded) return 1;
                                 if (getpixel(kopy_buffer0, (vboku+1)*KLITUNKA+(KLITUNKA/2), (krok+2)*KLITUNKA+(KLITUNKA/2))!=0xa0fded) return 1;
                                 if (getpixel(kopy_buffer0, (vboku+2)*KLITUNKA+(KLITUNKA/2), (krok+1)*KLITUNKA+(KLITUNKA/2))!=0xa0fded) return 1;
                                   }
 
 
-                if(b==1 || b==10){//Повірка з ліва
+                if(b==1 || b==10){//пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅ
                   if (getpixel(kopy_buffer0, (vboku-1)*KLITUNKA+(KLITUNKA/2), krok*KLITUNKA+(KLITUNKA/2))!=0xa0fded) return 1;
                   if (getpixel(kopy_buffer0, vboku*KLITUNKA+(KLITUNKA/2), (krok+1)*KLITUNKA+(KLITUNKA/2))!=0xa0fded) return 1;
                 }
 
-               if(b==2 || b==10){//Повірка з права
+               if(b==2 || b==10){//пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ
                   if (getpixel(kopy_buffer0, (vboku+3)*KLITUNKA+(KLITUNKA/2), krok*KLITUNKA+(KLITUNKA/2))!=0xa0fded) return 1;
                   if (getpixel(kopy_buffer0, (vboku+2)*KLITUNKA+(KLITUNKA/2), (krok+1)*KLITUNKA+(KLITUNKA/2))!=0xa0fded) return 1;
                 }
@@ -225,22 +221,22 @@ if (a==1) //перевірка трикутника обернутого в низ
 
 
 
-if (a==2) //перевірка трикутника обернутого в ліво
+if (a==2) //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅ
 {
 
-                if(b==0 || b==10){//Пpовірка з низу
+                if(b==0 || b==10){//пїЅpпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ
                     if (getpixel(kopy_buffer0, vboku*KLITUNKA+(KLITUNKA/2), (krok+2)*KLITUNKA+(KLITUNKA/2))!=0xa0fded) return 1;
                     if (getpixel(kopy_buffer0, (vboku+1)*KLITUNKA+(KLITUNKA/2), (krok+3)*KLITUNKA+(KLITUNKA/2))!=0xa0fded) return 1;
                                   }
 
 
-                if(b==1 || b==10){//Повірка з ліва
+                if(b==1 || b==10){//пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅ
                   if (getpixel(kopy_buffer0, vboku*KLITUNKA+(KLITUNKA/2), krok*KLITUNKA+(KLITUNKA/2))!=0xa0fded) return 1;
                   if (getpixel(kopy_buffer0, (vboku-1)*KLITUNKA+(KLITUNKA/2), (krok+1)*KLITUNKA+(KLITUNKA/2))!=0xa0fded) return 1;
                   if (getpixel(kopy_buffer0, vboku*KLITUNKA+(KLITUNKA/2), (krok+2)*KLITUNKA+(KLITUNKA/2))!=0xa0fded) return 1;
                 }
 
-               if(b==2 || b==10){//Повірка з права
+               if(b==2 || b==10){//пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ
                   if (getpixel(kopy_buffer0, (vboku+2)*KLITUNKA+(KLITUNKA/2), (krok)*KLITUNKA+(KLITUNKA/2))!=0xa0fded) return 1;
                   if (getpixel(kopy_buffer0, (vboku+2)*KLITUNKA+(KLITUNKA/2), (krok+1)*KLITUNKA+(KLITUNKA/2))!=0xa0fded) return 1;
                   if (getpixel(kopy_buffer0, (vboku+2)*KLITUNKA+(KLITUNKA/2), (krok+2)*KLITUNKA+(KLITUNKA/2))!=0xa0fded) return 1;
@@ -248,25 +244,25 @@ if (a==2) //перевірка трикутника обернутого в ліво
 }
 
 
-if (a==3) //перевірка трикутника обернутого в право
+if (a==3) //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ
 {
 
 
 
 
-                if(b==0 || b==10){//Повірка з низу
+                if(b==0 || b==10){//пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ
                     if (getpixel(kopy_buffer0, vboku*KLITUNKA+(KLITUNKA/2), (krok+3)*KLITUNKA+(KLITUNKA/2))!=0xa0fded) return 1;
                     if (getpixel(kopy_buffer0, (vboku+1)*KLITUNKA+(KLITUNKA/2), (krok+2)*KLITUNKA+(KLITUNKA/2))!=0xa0fded) return 1;
                     }
 
 
-                if(b==1 || b==10){//Повірка з ліва
+                if(b==1 || b==10){//пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅ
                   if (getpixel(kopy_buffer0, (vboku-1)*KLITUNKA+(KLITUNKA/2), krok*KLITUNKA+(KLITUNKA/2))!=0xa0fded) return 1;
                   if (getpixel(kopy_buffer0, (vboku-1)*KLITUNKA+(KLITUNKA/2), (krok+1)*KLITUNKA+(KLITUNKA/2))!=0xa0fded) return 1;
                   if (getpixel(kopy_buffer0, (vboku-1)*KLITUNKA+(KLITUNKA/2), (krok+2)*KLITUNKA+(KLITUNKA/2))!=0xa0fded) return 1;
                 }
 
-               if(b==2 || b==10){//Повірка з права
+               if(b==2 || b==10){//пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ
                   if (getpixel(kopy_buffer0, (vboku+1)*KLITUNKA+(KLITUNKA/2), krok*KLITUNKA+(KLITUNKA/2))!=0xa0fded) return 1;
                   if (getpixel(kopy_buffer0, (vboku+2)*KLITUNKA+(KLITUNKA/2), (krok+1)*KLITUNKA+(KLITUNKA/2))!=0xa0fded) return 1;
                   if (getpixel(kopy_buffer0, (vboku+1)*KLITUNKA+(KLITUNKA/2), (krok+2)*KLITUNKA+(KLITUNKA/2))!=0xa0fded) return 1;
@@ -296,7 +292,7 @@ return 0;
 //*************************************************************************************
 //*************************************************************************************
 //*************************************************************************************
-void trukutnuk_obertanna()
+void triangleRotate()
 {
 
 
@@ -314,10 +310,10 @@ if (getpixel(kopy_buffer0, (vboku)*KLITUNKA+(KLITUNKA/2), (krok)*KLITUNKA+(KLITU
 
 
                                                                                                             }else{polojena_Obekta=3,vboku+=1;
-                                                                                                            //обернути обэкт по годинниковій стрілці
+                                                                                                            //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
                                                                                                             }
 
-                                                                                                            //вернути обэкт назад
+                                                                                                            //пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 return;
 
 }
@@ -331,7 +327,7 @@ if (getpixel(kopy_buffer0, vboku*KLITUNKA+(KLITUNKA/2), (krok-1)*KLITUNKA+(KLITU
      getpixel(kopy_buffer0, (vboku+1)*KLITUNKA+(KLITUNKA/2), (krok-1)*KLITUNKA+(KLITUNKA/2)) == 0xa0fded &&
    getpixel(kopy_buffer0, vboku*KLITUNKA+(KLITUNKA/2), (krok+1)*KLITUNKA+(KLITUNKA/2)) == 0xa0fded &&
     getpixel(kopy_buffer0, (vboku+2)*KLITUNKA+(KLITUNKA/2), (krok+1)*KLITUNKA+(KLITUNKA/2)) == 0xa0fded){polojena_Obekta=2,krok-=1;
-                                                                                                            //обернути обэкт по годинниковій стрілці
+                                                                                                            //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
                                                                                                             }
 return;
 }
@@ -341,7 +337,7 @@ return;
 
 //*************************************3-1************************************************
 if (polojena_Obekta==3)
-            {//polojena_Obekta=1;//обернути обэкт по годинниковій стрілці
+            {//polojena_Obekta=1;//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 
 if (getpixel(kopy_buffer0, (vboku+1)*KLITUNKA+(KLITUNKA/2), krok*KLITUNKA+(KLITUNKA/2)) != 0xa0fded ||
      getpixel(kopy_buffer0, (vboku+1)*KLITUNKA+(KLITUNKA/2), (krok+2)*KLITUNKA+(KLITUNKA/2)) != 0xa0fded) {
@@ -352,11 +348,11 @@ if (getpixel(kopy_buffer0, (vboku+1)*KLITUNKA+(KLITUNKA/2), krok*KLITUNKA+(KLITU
 if (getpixel(kopy_buffer0, (vboku-1)*KLITUNKA+(KLITUNKA/2), (krok+1)*KLITUNKA+(KLITUNKA/2)) == 0xa0fded &&
      getpixel(kopy_buffer0, (vboku-1)*KLITUNKA+(KLITUNKA/2), (krok+2)*KLITUNKA+(KLITUNKA/2)) == 0xa0fded)
             {
-         polojena_Obekta=1,krok+=1,vboku-=1;//обернути обэкт по годинниковій стрілці
+         polojena_Obekta=1,krok+=1,vboku-=1;//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
             }else
             {
                 if (getpixel(kopy_buffer0, (vboku+2)*KLITUNKA+(KLITUNKA/2), krok*KLITUNKA+(KLITUNKA/2)) == 0xa0fded &&
-            getpixel(kopy_buffer0, (vboku+2)*KLITUNKA+(KLITUNKA/2), (krok+1)*KLITUNKA+(KLITUNKA/2)) == 0xa0fded) {polojena_Obekta=1,krok+=1;//обернути обэкт по годинниковій стрілці
+            getpixel(kopy_buffer0, (vboku+2)*KLITUNKA+(KLITUNKA/2), (krok+1)*KLITUNKA+(KLITUNKA/2)) == 0xa0fded) {polojena_Obekta=1,krok+=1;//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
                                                                                                                 }
 
             }
@@ -380,11 +376,11 @@ if (getpixel(kopy_buffer0, vboku*KLITUNKA+(KLITUNKA/2), krok*KLITUNKA+(KLITUNKA/
 if (getpixel(kopy_buffer0, (vboku+2)*KLITUNKA+(KLITUNKA/2), krok*KLITUNKA+(KLITUNKA/2)) == 0xa0fded &&
      getpixel(kopy_buffer0, (vboku+2)*KLITUNKA+(KLITUNKA/2), (krok+1)*KLITUNKA+(KLITUNKA/2)) == 0xa0fded)
                 {
-         polojena_Obekta=0;//обернути обэкт по годинниковій стрілці
+         polojena_Obekta=0;//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
                 }else
                 {
          if (getpixel(kopy_buffer0, (vboku-1)*KLITUNKA+(KLITUNKA/2), (krok+1)*KLITUNKA+(KLITUNKA/2)) == 0xa0fded &&
-            getpixel(kopy_buffer0, (vboku-1)*KLITUNKA+(KLITUNKA/2), (krok+2)*KLITUNKA+(KLITUNKA/2)) == 0xa0fded) {polojena_Obekta=0,vboku-=1;//обернути обэкт по годинниковій стрілці
+            getpixel(kopy_buffer0, (vboku-1)*KLITUNKA+(KLITUNKA/2), (krok+2)*KLITUNKA+(KLITUNKA/2)) == 0xa0fded) {polojena_Obekta=0,vboku-=1;//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
                                                                                                                 }
                 }
 

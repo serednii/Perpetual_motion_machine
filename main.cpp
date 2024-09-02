@@ -47,8 +47,6 @@ float  tt;
 
 
 //float l_1 = vusota_basein-odstup_horu_nuzu-odstup_horu_nuzu;
-
-
  //c=pi*d;75
 
 float r_1 = vusota_bocka*(koof_dla_odstup_mij_bocka+1)*6;
@@ -72,24 +70,18 @@ BITMAP *buffer_text;
 
 int marcador,marcador1;
 
-
-
 void drawCircle(int x0, int y0, int radius) {
-
 
 	int x = x0;
 	int y = y0;
 	int g = 2*3.14/360;
 	int r1;
+
 	for (int r = 0; r<=360; r++) {
-    r1 = r * g;
-
-    x=x+200+(x0*cos(r1)-y0*sin(r1));
-    y=y+200+(x0*sin(r1)-y0*cos(r1));
-    _putpixel(buffer_basein, x, y, 0x000000);
-
-
-
+        r1 = r * g;
+        x=x+200+(x0*cos(r1)-y0*sin(r1));
+        y=y+200+(x0*sin(r1)-y0*cos(r1));
+        _putpixel(buffer_basein, x, y, 0x000000);
 	}
 }
 
@@ -116,14 +108,12 @@ klk:
 ///////////////////////////////////////////////////////////
 }
 //void   generator();
-void bocka();
 
-#include "include/bocka.h"
-#include "include/basein.h"
-#include "include/klaviatura.h"
+void barrel();
 
-
-
+#include "include/barrel.h"
+#include "include/basin.h"
+#include "include/keyboard.h"
 
 
 int main()
@@ -138,12 +128,6 @@ int main()
   //LOCK_FUNCTION(incrementa_timer);
   //LOCK_VARIABLE(timer);
   //install_int_ex(incrementa_timer, MSEC_TO_TIMER(1));
-
-
-
-
-
-
 
 set_color_depth(32);
 set_gfx_mode(GFX_AUTODETECT_WINDOWED, ancho, alto, 0, 0);
@@ -168,31 +152,29 @@ for (int a=0; a<= dov_kruga+70; a=a+odstup_mij_bockamu+vusota_bocka)
 }
 ///************************************************************************************************
 
-basein();
+basin();
 //***************************************************************
 clear_to_color(buffer, 0xdddddd);
 
 while (!key[KEY_ESC])
     {
 
-klaviatura();
+keyboard();
  //**************************************
 
 //uroven_vody = vusota_basein *0.75;
- bocka();
-basein();
+ barrel();
+basin();
 //************************************************************************************************
 //************************************************************************************************
 //************************************************************************************************
 //************************************************************************************************
 {
 
-
-
     for (int a=0; a!=kol_bak; a++)
     {
-num =a;
-bocka();
+    num =a;
+    barrel();
 for (int u=0; u!=20; u++){
     u=u;
 }
@@ -202,8 +184,6 @@ clear_to_color(buffer_text, 0xdddddd);
             rotate_sprite(buffer_basein,buffer_bocka[1],centr-polovuna-(hurina_bocka/2)-4,vusota_basein-odstup_horu_nuzu-numbers[a],0);
         }
 ///************************************************************************************************
-
-
 
 ///************************************************************************************************
         if (numbers[a]<l_1+r_1 && numbers[a]>l_1){//ĳ������

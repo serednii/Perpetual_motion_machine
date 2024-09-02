@@ -4,8 +4,8 @@
 //*************************************************************************************
 //*************************************************************************************
 //*************************************************************************************
-//Малює палку горизонтально або вертикально
-void palka(int x, int y, int polojenna, int pole)
+//пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+void line(int x, int y, int polojenna, int pole)
 {
 
 const int HURUNA_ELEMENTA=KLITUNKA-4;
@@ -24,7 +24,7 @@ x =  2+(KLITUNKA*x);
 y =  2+(KLITUNKA*y);
 }
 
-if (polojenna==0)//Положення палички горизонтально
+if (polojenna==0)//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 {
                     rectfill(kopy_buffer0, x, y, x+HURUNA_ELEMENTA, y+HURUNA_ELEMENTA, 0xf00060);
                  rectfill(kopy_buffer0, x+2, y+2, x+HURUNA_ELEMENTA-2, y+HURUNA_ELEMENTA-2, 0xa05580);
@@ -39,7 +39,7 @@ if (polojenna==0)//Положення палички горизонтально
                 rectfill(kopy_buffer0, x, y, x+HURUNA_ELEMENTA, y+HURUNA_ELEMENTA, 0xf00060);
                  rectfill(kopy_buffer0, x+2, y+2, x+HURUNA_ELEMENTA-2, y+HURUNA_ELEMENTA-2, 0xa05580);
 }
-if (polojenna==1)//Положення палички вертикально
+if (polojenna==1)//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 {
                     rectfill(kopy_buffer0, x, y, x+HURUNA_ELEMENTA, y+HURUNA_ELEMENTA, 0xf00060);
                  rectfill(kopy_buffer0, x+2, y+2, x+HURUNA_ELEMENTA-2, y+HURUNA_ELEMENTA-2, 0xa05580);
@@ -111,19 +111,19 @@ if (polojenna==1)//Положення палички вертикально
 //*************************************************************************************
 //*************************************************************************************
 //*************************************************************************************
-//Перевіряє коли фігура палка дійде до кінця
-int palka_proverka(int a,int b)//а - положення вертикально або горизонтально
-                               //b - з якої сторони перевіряти 0- знизу
-                                //                             1- зліва
-                                //                             2- зправа
-                                //                             10- з трьох сторін
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ
+int lineРЎheck(int a,int b)//пїЅ - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+                               //b - пїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ 0- пїЅпїЅпїЅпїЅпїЅ
+                                //                             1- пїЅпїЅпїЅпїЅ
+                                //                             2- пїЅпїЅпїЅпїЅпїЅпїЅ
+                                //                             10- пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 {
 
 //palka(vboku, krok, 0, 0);
-//13617097 колір сітки
-//14540253 колір фона
+//13617097 пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
+//14540253 пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 int a1;
-if (a==0)//перевірка горизонтальної палички
+if (a==0)//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 {
 
 if(b==0 || b==10){
@@ -155,13 +155,13 @@ if (getpixel(kopy_buffer0, (vboku+4)*KLITUNKA+(KLITUNKA/2), krok*KLITUNKA+(KLITU
 
 if (a==1)
 {
-                 if(b==0 || b==10){//Повірка з низу
+                 if(b==0 || b==10){//пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ
                 a1 = getpixel(kopy_buffer0, vboku*KLITUNKA+(KLITUNKA/2), (krok+4)*KLITUNKA+(KLITUNKA/2));
                  if (a1!=0xa0fded) return 1;
                  }
 
 
-                 if(b==1 || b==10){//Повірка з ліва
+                 if(b==1 || b==10){//пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅ
                  a1 = getpixel(kopy_buffer0, (vboku -1)*KLITUNKA+(KLITUNKA/2), krok*KLITUNKA+(KLITUNKA/2));
                   if (a1!=0xa0fded) return 1;
                  a1 = getpixel(kopy_buffer0, (vboku -1)*KLITUNKA+(KLITUNKA/2), (krok+1)*KLITUNKA+(KLITUNKA/2));
@@ -173,7 +173,7 @@ if (a==1)
                  }
 
 
-                if(b==2 || b==10){//Повірка з права
+                if(b==2 || b==10){//пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ
                   a1 = getpixel(kopy_buffer0, (vboku+1)*KLITUNKA+(KLITUNKA/2), krok*KLITUNKA+(KLITUNKA/2));
                   if (a1!=0xa0fded) return 1;
                  a1 = getpixel(kopy_buffer0, (vboku+1)*KLITUNKA+(KLITUNKA/2), (krok+1)*KLITUNKA+(KLITUNKA/2));
@@ -201,17 +201,17 @@ return 0;
 //*************************************************************************************
 //*************************************************************************************
 //*************************************************************************************
-void palka_obertanna()
+void lineRotate()
 {
 
     if (polojena_Obekta==1)
             {
 
 //***************************************************************************************
-//перекидаємо горизонтально
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
 int pravuy = 0;
-//Перевірка першого стовпчика правого боку
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 if (getpixel(kopy_buffer0, (vboku+1)*KLITUNKA+(KLITUNKA/2), (krok+1)*KLITUNKA+(KLITUNKA/2)) != 0xa0fded ||
      getpixel(kopy_buffer0, (vboku+1)*KLITUNKA+(KLITUNKA/2), (krok+2)*KLITUNKA+(KLITUNKA/2)) != 0xa0fded ||
      getpixel(kopy_buffer0, (vboku+1)*KLITUNKA+(KLITUNKA/2), (krok+3)*KLITUNKA+(KLITUNKA/2)) != 0xa0fded) {
@@ -219,7 +219,7 @@ if (getpixel(kopy_buffer0, (vboku+1)*KLITUNKA+(KLITUNKA/2), (krok+1)*KLITUNKA+(K
                                                                                                         }
 pravuy++;
 
-//Перевірка другого стовпчика правого боку
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 if (getpixel(kopy_buffer0, (vboku+2)*KLITUNKA+(KLITUNKA/2), (krok+1)*KLITUNKA+(KLITUNKA/2)) != 0xa0fded ||
      getpixel(kopy_buffer0, (vboku+2)*KLITUNKA+(KLITUNKA/2), (krok+2)*KLITUNKA+(KLITUNKA/2)) != 0xa0fded ||
      getpixel(kopy_buffer0, (vboku+2)*KLITUNKA+(KLITUNKA/2), (krok+3)*KLITUNKA+(KLITUNKA/2)) != 0xa0fded) {;
@@ -236,7 +236,7 @@ pravuy++;
 
 mmmm:
 
-//Перевірка першого стовпчика лівого боку
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 if (getpixel(kopy_buffer0, (vboku-1)*KLITUNKA+(KLITUNKA/2),  krok * KLITUNKA+(KLITUNKA/2)) != 0xa0fded ||
      getpixel(kopy_buffer0, (vboku-1)*KLITUNKA+(KLITUNKA/2), (krok+1)*KLITUNKA+(KLITUNKA/2)) != 0xa0fded ||
      getpixel(kopy_buffer0, (vboku-1)*KLITUNKA+(KLITUNKA/2), (krok+2)*KLITUNKA+(KLITUNKA/2)) != 0xa0fded ||
@@ -261,7 +261,7 @@ pravuy++;
                                                                                                                              }
 
                                                                                                             }
-//Перевірка 2 стовпчика лівого боку
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ 2 пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 
 if (getpixel(kopy_buffer0, (vboku-2)*KLITUNKA+(KLITUNKA/2),  krok * KLITUNKA+(KLITUNKA/2)) != 0xa0fded ||
      getpixel(kopy_buffer0, (vboku-2)*KLITUNKA+(KLITUNKA/2), (krok+1)*KLITUNKA+(KLITUNKA/2)) != 0xa0fded ||
@@ -273,7 +273,7 @@ if (getpixel(kopy_buffer0, (vboku-2)*KLITUNKA+(KLITUNKA/2),  krok * KLITUNKA+(KL
                                                                                                                              }
 
                                                                                                            }
-//Перевірка 3 стовпчика лівого боку
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ 3 пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 
 if (getpixel(kopy_buffer0, (vboku-3)*KLITUNKA+(KLITUNKA/2),  krok * KLITUNKA+(KLITUNKA/2)) != 0xa0fded ||
      getpixel(kopy_buffer0, (vboku-3)*KLITUNKA+(KLITUNKA/2), (krok+1)*KLITUNKA+(KLITUNKA/2)) != 0xa0fded ||

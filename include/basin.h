@@ -4,8 +4,8 @@
 //*************************************************************************************
 //*************************************************************************************
 //*************************************************************************************
-//Малює бочку з поршнем
-void basein()
+//пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+void basin()
 {
 ///centr  polovuna
 rectfill(buffer_basein, 0, 0, hurina_basein, vusota_basein, 0xdcffff);
@@ -23,21 +23,6 @@ line(buffer_basein, 200+a, odstup_horu_nuzu+l_1, 205+a, odstup_horu_nuzu+l_1, 0x
 line(buffer_basein, centr-polovuna+(hurina_bocka/2)+1, odstup_horu_nuzu, centr-polovuna+(hurina_bocka/2)+1, odstup_horu_nuzu+l_1, col);
 line(buffer_basein, centr+polovuna-(hurina_bocka/2)-4, odstup_horu_nuzu, centr+polovuna-(hurina_bocka/2)-4, odstup_horu_nuzu+l_1, col);
 
-
-//for (float t=3.24; t<=6.18; t=t+0.01){
-//float x,y;
-//  x=50*(0.5+2*cos(t));
- // y=50*(0.2+2*sin(t));
- // putpixel(buffer_basein,x+325, y+odstup_horu_nuzu, col);
-  /////cout<<"t = "<<t<<"          x = "<<x<<"         y = "<<y<<endl;
-//}
-//for (float t=6.389; t<=9.329; t=t+0.01){
-       // for (float t=6.18; t<=6.18+3.33; t=t+0.01){
-//float x,y;
- // x=50*(0.5+2*cos(t));
-  //y=50*(0.2+2*sin(t));
-  //putpixel(buffer_basein,x+325, y+(vusota_basein-odstup_horu_nuzu), col);
-//}
 }
 //***************************************************************
 
@@ -49,13 +34,11 @@ line(buffer_basein, centr+polovuna+hurina_bocka-(hurina_bocka/2)-1, 0, centr+pol
 line(buffer_basein, centr+polovuna+hurina_bocka-(hurina_bocka/2)-1, 0, centr+polovuna+hurina_bocka-(hurina_bocka/2)-1, odstup_horu_nuzu+l_1, col);
 
 
-
 for (float t=3.24; t<=6.18; t=t+0.01){
 float x,y;
   x=75*(cos(t));
   y=75*(sin(t));
   putpixel(buffer_basein,x+313, y+odstup_horu_nuzu, col);
-  //cout<<"t = "<<t<<"          x = "<<x<<"         y = "<<y<<endl;
 }
 for (float t=6.18; t<=6.18+3.33; t=t+0.01){
 float x,y;

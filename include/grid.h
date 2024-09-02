@@ -1,4 +1,4 @@
-void Setka()
+void grid()
 {int setka_x=KLITUNKA, setka_y=KLITUNKA;
 int kolir_setka = 0x000000;
                     for(int a = setka_x+KLITUNKA; a<=setka_x+hurina-KLITUNKA; a+=KLITUNKA)

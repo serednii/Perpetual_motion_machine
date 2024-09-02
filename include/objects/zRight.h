@@ -5,8 +5,68 @@
 //*************************************************************************************
 //*************************************************************************************
 //Малює палку горизонтально або вертикально
-void bocka(int x)
+void  zRight(int x, int y, int polojenna, int pole) //Z_vpravo
 {
+
+const int HURUNA_ELEMENTA=KLITUNKA-4;
+
+if (pole==0)
+{
+x =  2+(KLITUNKA*x);
+y =  2+(KLITUNKA*y);
+}else
+{
+x =  2+(KLITUNKA*x);
+y =  2+(KLITUNKA*y);
+}
+
+//*************************************************************************
+
+if (polojenna==0)
+
+{
+                rectfill(kopy_buffer0, x, y, x+HURUNA_ELEMENTA, y+HURUNA_ELEMENTA, 0x806040);
+                rectfill(kopy_buffer0, x+2, y+2, x+HURUNA_ELEMENTA-2, y+HURUNA_ELEMENTA-2, 0xf0f00f);
+
+                x+=KLITUNKA;
+
+                rectfill(kopy_buffer0, x, y, x+HURUNA_ELEMENTA, y+HURUNA_ELEMENTA, 0x806040);
+                rectfill(kopy_buffer0, x+2, y+2, x+HURUNA_ELEMENTA-2, y+HURUNA_ELEMENTA-2, 0xf0f00f);
+                y+=KLITUNKA;
+                rectfill(kopy_buffer0, x, y, x+HURUNA_ELEMENTA, y+HURUNA_ELEMENTA, 0x806040);
+                rectfill(kopy_buffer0, x+2, y+2, x+HURUNA_ELEMENTA-2, y+HURUNA_ELEMENTA-2, 0xf0f00f);
+
+                x+=KLITUNKA;
+
+                rectfill(kopy_buffer0, x, y, x+HURUNA_ELEMENTA, y+HURUNA_ELEMENTA, 0x806040);
+                rectfill(kopy_buffer0, x+2, y+2, x+HURUNA_ELEMENTA-2, y+HURUNA_ELEMENTA-2, 0xf0f00f);
+}
+
+//*************************************************************************
+
+//Положення // X
+if (polojenna==1)
+{               y+=KLITUNKA;
+                rectfill(kopy_buffer0, x, y, x+HURUNA_ELEMENTA, y+HURUNA_ELEMENTA, 0x806040);
+                rectfill(kopy_buffer0, x+2, y+2, x+HURUNA_ELEMENTA-2, y+HURUNA_ELEMENTA-2, 0xf0f00f);
+
+                y+=KLITUNKA;
+                rectfill(kopy_buffer0, x, y, x+HURUNA_ELEMENTA, y+HURUNA_ELEMENTA, 0x806040);
+                rectfill(kopy_buffer0, x+2, y+2, x+HURUNA_ELEMENTA-2, y+HURUNA_ELEMENTA-2, 0xf0f00f);
+                x+=KLITUNKA;
+                 y-=KLITUNKA;
+                rectfill(kopy_buffer0, x, y, x+HURUNA_ELEMENTA, y+HURUNA_ELEMENTA, 0x806040);
+                rectfill(kopy_buffer0, x+2, y+2, x+HURUNA_ELEMENTA-2, y+HURUNA_ELEMENTA-2, 0xf0f00f);
+                y-=KLITUNKA;
+
+
+                rectfill(kopy_buffer0, x, y, x+HURUNA_ELEMENTA, y+HURUNA_ELEMENTA, 0x806040);
+                rectfill(kopy_buffer0, x+2, y+2, x+HURUNA_ELEMENTA-2, y+HURUNA_ELEMENTA-2, 0xf0f00f);
+}
+
+
+
+//*************************************************************************
 
 
 
@@ -57,7 +117,7 @@ void bocka(int x)
 //*************************************************************************************
 //*************************************************************************************
 //Перевіряє коли фігура палка дійде до кінця
-int Z_vpravo_proverka(int a,int b)//а - положення
+int zRightСheck(int a,int b)//а - положення
                                //b - з якої сторони перевіряти 0- знизу
                                 //                             1- зліва
                                 //                             2- зправа
@@ -140,7 +200,7 @@ return 0;
 //*************************************************************************************
 //*************************************************************************************
 //*************************************************************************************
-void Z_vpravo_obertanna()
+void zRightRotate()
 {
 
 
