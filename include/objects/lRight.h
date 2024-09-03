@@ -5,12 +5,11 @@
 //*************************************************************************************
 //*************************************************************************************
 //����� ����� ������������� ��� �����������
-void lRight(int x, int y, int polojenna, int pole)
+void lRight(int x, int y, int half, int pole)
 {
 
 const int HURUNA_ELEMENTA=KLITUNKA-4;
 //y=1;
-//xxx=0;
 //yyy = 0;
 //pole = 1;
 
@@ -27,10 +26,9 @@ y =  2+(KLITUNKA*y);
 
 //*************************************************************************
 
-
-                                         //XXX
+                                         //
                              //��������� //  X
-if (polojenna==0)
+if (half==0)
 
 {
                 rectfill(kopy_buffer0, x, y, x+HURUNA_ELEMENTA, y+HURUNA_ELEMENTA, 0x987000);
@@ -55,8 +53,8 @@ if (polojenna==0)
 
 
                                          //X
-                             //��������� //XXX
-if (polojenna==1)
+                             //��������� //
+if (half==1)
 {
                 rectfill(kopy_buffer0, x, y, x+HURUNA_ELEMENTA, y+HURUNA_ELEMENTA, 0x987000);
                 rectfill(kopy_buffer0, x+2, y+2, x+HURUNA_ELEMENTA-2, y+HURUNA_ELEMENTA-2, 0x50505f);
@@ -82,7 +80,7 @@ if (polojenna==1)
                                          // XX
                                          // X
                              //��������� // X
-if (polojenna==2)
+if (half==2)
 {
                 rectfill(kopy_buffer0, x, y, x+HURUNA_ELEMENTA, y+HURUNA_ELEMENTA, 0x987000);
                 rectfill(kopy_buffer0, x+2, y+2, x+HURUNA_ELEMENTA-2, y+HURUNA_ELEMENTA-2, 0x50505f);
@@ -110,7 +108,7 @@ if (polojenna==2)
                                          //  X
                                          //  X
                              //��������� // XX
-if (polojenna==3)
+if (half==3)
 
 {               x+=KLITUNKA;
                 rectfill(kopy_buffer0, x, y, x+HURUNA_ELEMENTA, y+HURUNA_ELEMENTA, 0x987000);
@@ -321,7 +319,7 @@ void lRightRotate()
 
 
 //*********************************0-3****************************************************
-    if (polojena_Obekta==0)
+    if (halfObject==0)
             {
 
 if (getpixel(kopy_buffer0, (vboku)*KLITUNKA+(KLITUNKA/2), (krok+1)*KLITUNKA+(KLITUNKA/2)) != 0xa0fded ||
@@ -330,7 +328,7 @@ if (getpixel(kopy_buffer0, (vboku)*KLITUNKA+(KLITUNKA/2), (krok+1)*KLITUNKA+(KLI
      getpixel(kopy_buffer0, (vboku+1)*KLITUNKA+(KLITUNKA/2), (krok-1)*KLITUNKA+(KLITUNKA/2)) != 0xa0fded) {
 
 
-                                                                                                            }else{polojena_Obekta=3,krok-=1;
+                                                                                                            }else{halfObject=3,krok-=1;
                                                                                                             //�������� ����� �� ����������� ������
                                                                                                             }
 
@@ -342,12 +340,12 @@ return;
 
 
 //********************************1-2*****************************************************
-if (polojena_Obekta==1)
+if (halfObject==1)
             {
 if (getpixel(kopy_buffer0, (vboku+1)*KLITUNKA+(KLITUNKA/2), krok*KLITUNKA+(KLITUNKA/2)) == 0xa0fded &&
      getpixel(kopy_buffer0, (vboku+2)*KLITUNKA+(KLITUNKA/2), krok*KLITUNKA+(KLITUNKA/2)) == 0xa0fded &&
    getpixel(kopy_buffer0, (vboku+1)*KLITUNKA+(KLITUNKA/2), (krok+2)*KLITUNKA+(KLITUNKA/2)) == 0xa0fded &&
-    getpixel(kopy_buffer0, (vboku+2)*KLITUNKA+(KLITUNKA/2), (krok+2)*KLITUNKA+(KLITUNKA/2)) == 0xa0fded){polojena_Obekta=2, vboku+=1;
+    getpixel(kopy_buffer0, (vboku+2)*KLITUNKA+(KLITUNKA/2), (krok+2)*KLITUNKA+(KLITUNKA/2)) == 0xa0fded){halfObject=2, vboku+=1;
                                                                                                             //�������� ����� �� ����������� ������
                                                                                                             }
 return;
@@ -357,8 +355,8 @@ return;
 
 
 //*************************************3-1************************************************
-if (polojena_Obekta==3)
-            {//polojena_Obekta=1;//�������� ����� �� ����������� ������
+if (halfObject==3)
+            {//halfObject=1;//�������� ����� �� ����������� ������
 
 if (getpixel(kopy_buffer0, vboku*KLITUNKA+(KLITUNKA/2), krok*KLITUNKA+(KLITUNKA/2)) != 0xa0fded ||
      getpixel(kopy_buffer0, vboku*KLITUNKA+(KLITUNKA/2), (krok+1)*KLITUNKA+(KLITUNKA/2)) != 0xa0fded) {
@@ -369,12 +367,12 @@ if (getpixel(kopy_buffer0, vboku*KLITUNKA+(KLITUNKA/2), krok*KLITUNKA+(KLITUNKA/
 if (getpixel(kopy_buffer0, (vboku+2)*KLITUNKA+(KLITUNKA/2), krok*KLITUNKA+(KLITUNKA/2)) == 0xa0fded &&
      getpixel(kopy_buffer0, (vboku+2)*KLITUNKA+(KLITUNKA/2), (krok+1)*KLITUNKA+(KLITUNKA/2)) == 0xa0fded)
             {
-         polojena_Obekta=1;//�������� ����� �� ����������� ������
+         halfObject=1;//�������� ����� �� ����������� ������
             }else
             {
                 if (getpixel(kopy_buffer0, (vboku-1)*KLITUNKA+(KLITUNKA/2), krok*KLITUNKA+(KLITUNKA/2)) == 0xa0fded &&
             getpixel(kopy_buffer0, (vboku-1)*KLITUNKA+(KLITUNKA/2), (krok+1)*KLITUNKA+(KLITUNKA/2)) == 0xa0fded &&
-            getpixel(kopy_buffer0, (vboku-1)*KLITUNKA+(KLITUNKA/2), (krok+2)*KLITUNKA+(KLITUNKA/2)) == 0xa0fded) {polojena_Obekta=1, vboku-=1, krok-=1;//�������� ����� �� ����������� ������
+            getpixel(kopy_buffer0, (vboku-1)*KLITUNKA+(KLITUNKA/2), (krok+2)*KLITUNKA+(KLITUNKA/2)) == 0xa0fded) {halfObject=1, vboku-=1, krok-=1;//�������� ����� �� ����������� ������
                                                                                                                 }
 
             }
@@ -386,7 +384,7 @@ return;
 
 //***********************************2-0**************************************************
 
-if (polojena_Obekta==2)
+if (halfObject==2)
             {
 
 if (getpixel(kopy_buffer0, (vboku+1)*KLITUNKA+(KLITUNKA/2), (krok+1)*KLITUNKA+(KLITUNKA/2)) != 0xa0fded ||
@@ -398,12 +396,12 @@ if (getpixel(kopy_buffer0, (vboku+1)*KLITUNKA+(KLITUNKA/2), (krok+1)*KLITUNKA+(K
 if (getpixel(kopy_buffer0, (vboku-1)*KLITUNKA+(KLITUNKA/2), (krok+1)*KLITUNKA+(KLITUNKA/2)) == 0xa0fded &&
      getpixel(kopy_buffer0, (vboku-1)*KLITUNKA+(KLITUNKA/2), (krok+2)*KLITUNKA+(KLITUNKA/2)) == 0xa0fded)
                 {
-         polojena_Obekta=0, vboku-=1,krok+=1;//�������� ����� �� ����������� ������
+         halfObject=0, vboku-=1,krok+=1;//�������� ����� �� ����������� ������
                 }else
                 {
          if (getpixel(kopy_buffer0, (vboku+2)*KLITUNKA+(KLITUNKA/2), krok*KLITUNKA+(KLITUNKA/2)) == 0xa0fded &&
              getpixel(kopy_buffer0, (vboku+2)*KLITUNKA+(KLITUNKA/2), (krok+1)*KLITUNKA+(KLITUNKA/2)) == 0xa0fded &&
-            getpixel(kopy_buffer0, (vboku+2)*KLITUNKA+(KLITUNKA/2), (krok+2)*KLITUNKA+(KLITUNKA/2)) == 0xa0fded) {polojena_Obekta=0;//�������� ����� �� ����������� ������
+            getpixel(kopy_buffer0, (vboku+2)*KLITUNKA+(KLITUNKA/2), (krok+2)*KLITUNKA+(KLITUNKA/2)) == 0xa0fded) {halfObject=0;//�������� ����� �� ����������� ������
                                                                                                                 }
                 }
 

@@ -5,7 +5,7 @@
 //*************************************************************************************
 //*************************************************************************************
 //Малює палку горизонтально або вертикально
-void  zRight(int x, int y, int polojenna, int pole) //Z_vpravo
+void  zRight(int x, int y, int half, int pole) //Z_vpravo
 {
 
 const int HURUNA_ELEMENTA=KLITUNKA-4;
@@ -22,7 +22,7 @@ y =  2+(KLITUNKA*y);
 
 //*************************************************************************
 
-if (polojenna==0)
+if (half==0)
 
 {
                 rectfill(kopy_buffer0, x, y, x+HURUNA_ELEMENTA, y+HURUNA_ELEMENTA, 0x806040);
@@ -45,7 +45,7 @@ if (polojenna==0)
 //*************************************************************************
 
 //Положення // X
-if (polojenna==1)
+if (half==1)
 {               y+=KLITUNKA;
                 rectfill(kopy_buffer0, x, y, x+HURUNA_ELEMENTA, y+HURUNA_ELEMENTA, 0x806040);
                 rectfill(kopy_buffer0, x+2, y+2, x+HURUNA_ELEMENTA-2, y+HURUNA_ELEMENTA-2, 0xf0f00f);
@@ -208,7 +208,7 @@ void zRightRotate()
 
 
 //*********************************1-0****************************************************
-    if (polojena_Obekta==0)
+    if (halfObject==0)
             {
 
 if (getpixel(kopy_buffer0, (vboku)*KLITUNKA+(KLITUNKA/2), (krok)*KLITUNKA+(KLITUNKA/2)) != 0xa0fded ||
@@ -217,7 +217,7 @@ if (getpixel(kopy_buffer0, (vboku)*KLITUNKA+(KLITUNKA/2), (krok)*KLITUNKA+(KLITU
      getpixel(kopy_buffer0, (vboku+2)*KLITUNKA+(KLITUNKA/2), (krok+1)*KLITUNKA+(KLITUNKA/2)) != 0xa0fded) {
 
 
-                                                                                                            }else{polojena_Obekta=1,krok-=1, vboku+=1;
+                                                                                                            }else{halfObject=1,krok-=1, vboku+=1;
                                                                                                             //обернути обэкт по годинниковій стрілці
                                                                                                             }
 
@@ -230,8 +230,8 @@ return;
 
 
 //*************************************0-1************************************************
-if (polojena_Obekta==1)
-            {//polojena_Obekta=1;//обернути обэкт по годинниковій стрілці
+if (halfObject==1)
+            {//halfObject=1;//обернути обэкт по годинниковій стрілці
 
 if (getpixel(kopy_buffer0, vboku*KLITUNKA+(KLITUNKA/2), (krok+1)*KLITUNKA+(KLITUNKA/2)) != 0xa0fded ||
      getpixel(kopy_buffer0, vboku*KLITUNKA+(KLITUNKA/2), (krok+2)*KLITUNKA+(KLITUNKA/2)) != 0xa0fded) {
@@ -242,11 +242,11 @@ if (getpixel(kopy_buffer0, vboku*KLITUNKA+(KLITUNKA/2), (krok+1)*KLITUNKA+(KLITU
 if (getpixel(kopy_buffer0, (vboku-1)*KLITUNKA+(KLITUNKA/2), (krok+1)*KLITUNKA+(KLITUNKA/2)) == 0xa0fded &&
      getpixel(kopy_buffer0, (vboku-1)*KLITUNKA+(KLITUNKA/2), (krok+2)*KLITUNKA+(KLITUNKA/2)) == 0xa0fded)
             {
-         polojena_Obekta=0, vboku-=1, krok+=1;//обернути обэкт по годинниковій стрілці
+         halfObject=0, vboku-=1, krok+=1;//обернути обэкт по годинниковій стрілці
             }else
             {
                 if (getpixel(kopy_buffer0, (vboku+2)*KLITUNKA+(KLITUNKA/2), (krok+1)*KLITUNKA+(KLITUNKA/2)) == 0xa0fded &&
-            getpixel(kopy_buffer0, (vboku+2)*KLITUNKA+(KLITUNKA/2), (krok+2)*KLITUNKA+(KLITUNKA/2)) == 0xa0fded) {polojena_Obekta=0, krok-=1;//обернути обэкт по годинниковій стрілці
+            getpixel(kopy_buffer0, (vboku+2)*KLITUNKA+(KLITUNKA/2), (krok+2)*KLITUNKA+(KLITUNKA/2)) == 0xa0fded) {halfObject=0, krok-=1;//обернути обэкт по годинниковій стрілці
                                                                                                                 }
 
             }

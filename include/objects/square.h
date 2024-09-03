@@ -10,7 +10,6 @@ void square(int x, int y, int pole)
 
 const int HURUNA_ELEMENTA=KLITUNKA-4;
 //y=1;
-//xxx=0;
 //yyy = 0;
 //pole = 1;
 

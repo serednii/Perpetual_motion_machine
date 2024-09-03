@@ -5,7 +5,7 @@
 //*************************************************************************************
 //*************************************************************************************
 //ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-void line(int x, int y, int polojenna, int pole)
+void line(int x, int y, int half, int pole)
 {
 
 const int HURUNA_ELEMENTA=KLITUNKA-4;
@@ -24,7 +24,7 @@ x =  2+(KLITUNKA*x);
 y =  2+(KLITUNKA*y);
 }
 
-if (polojenna==0)//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+if (half==0)//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 {
                     rectfill(kopy_buffer0, x, y, x+HURUNA_ELEMENTA, y+HURUNA_ELEMENTA, 0xf00060);
                  rectfill(kopy_buffer0, x+2, y+2, x+HURUNA_ELEMENTA-2, y+HURUNA_ELEMENTA-2, 0xa05580);
@@ -39,7 +39,7 @@ if (polojenna==0)//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿
                 rectfill(kopy_buffer0, x, y, x+HURUNA_ELEMENTA, y+HURUNA_ELEMENTA, 0xf00060);
                  rectfill(kopy_buffer0, x+2, y+2, x+HURUNA_ELEMENTA-2, y+HURUNA_ELEMENTA-2, 0xa05580);
 }
-if (polojenna==1)//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+if (half==1)//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 {
                     rectfill(kopy_buffer0, x, y, x+HURUNA_ELEMENTA, y+HURUNA_ELEMENTA, 0xf00060);
                  rectfill(kopy_buffer0, x+2, y+2, x+HURUNA_ELEMENTA-2, y+HURUNA_ELEMENTA-2, 0xa05580);
@@ -204,7 +204,7 @@ return 0;
 void lineRotate()
 {
 
-    if (polojena_Obekta==1)
+    if (halfObject==1)
             {
 
 //***************************************************************************************
@@ -245,7 +245,7 @@ if (getpixel(kopy_buffer0, (vboku-1)*KLITUNKA+(KLITUNKA/2),  krok * KLITUNKA+(KL
             getpixel(kopy_buffer0, (vboku+3)*KLITUNKA+(KLITUNKA/2), (krok+2)*KLITUNKA+(KLITUNKA/2)) != 0xa0fded ||
             getpixel(kopy_buffer0, (vboku+3)*KLITUNKA+(KLITUNKA/2), (krok+3)*KLITUNKA+(KLITUNKA/2)) != 0xa0fded) {goto vuxod;
 
-                                                                                                           }else{krok++,polojena_Obekta=0;
+                                                                                                           }else{krok++,halfObject=0;
                                                                                                             goto vuxod;
                                                                                                             }
 pravuy++;
@@ -256,7 +256,7 @@ pravuy++;
 
 
                                                                                                          }else{
-                                                                                if (pravuy>1){krok++, vboku--, polojena_Obekta=0;
+                                                                                if (pravuy>1){krok++, vboku--, halfObject=0;
                                                                                                                          goto vuxod;
                                                                                                                              }
 
@@ -268,7 +268,7 @@ if (getpixel(kopy_buffer0, (vboku-2)*KLITUNKA+(KLITUNKA/2),  krok * KLITUNKA+(KL
      getpixel(kopy_buffer0, (vboku-2)*KLITUNKA+(KLITUNKA/2), (krok+2)*KLITUNKA+(KLITUNKA/2)) != 0xa0fded ||
      getpixel(kopy_buffer0, (vboku-2)*KLITUNKA+(KLITUNKA/2), (krok+3)*KLITUNKA+(KLITUNKA/2))!=0xa0fded) {goto vuxod;
                                                                                                              }else{
-                                                                                     if (pravuy==1){krok++, vboku-=2, polojena_Obekta=0;
+                                                                                     if (pravuy==1){krok++, vboku-=2, halfObject=0;
                                                                                                                          goto vuxod;
                                                                                                                              }
 
@@ -280,7 +280,7 @@ if (getpixel(kopy_buffer0, (vboku-3)*KLITUNKA+(KLITUNKA/2),  krok * KLITUNKA+(KL
      getpixel(kopy_buffer0, (vboku-3)*KLITUNKA+(KLITUNKA/2), (krok+2)*KLITUNKA+(KLITUNKA/2)) != 0xa0fded ||
      getpixel(kopy_buffer0, (vboku-3)*KLITUNKA+(KLITUNKA/2), (krok+3)*KLITUNKA+(KLITUNKA/2))!=0xa0fded) {goto vuxod;
                                                                                                           }else{
-                                                                                           krok++, vboku-=3, polojena_Obekta=0;
+                                                                                           krok++, vboku-=3, halfObject=0;
                                                                                                                          goto vuxod;
 
 
@@ -310,7 +310,7 @@ vuxod:;
      getpixel(kopy_buffer0, (vboku+2)*KLITUNKA+(KLITUNKA/2), (krok+2)*KLITUNKA+(KLITUNKA/2))!=0xa0fded ||
      getpixel(kopy_buffer0, (vboku+3)*KLITUNKA+(KLITUNKA/2), (krok+1)*KLITUNKA+(KLITUNKA/2))!=0xa0fded) {
                                                                                                           }else{
-                                                                              krok--, vboku+=1, polojena_Obekta=1;
+                                                                              krok--, vboku+=1, halfObject=1;
                                                                                                               }
 
 
