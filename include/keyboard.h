@@ -8,7 +8,7 @@ int kk = key[KEY_DOWN];
     if(waterLevel<0.98){
         //pol_porch=pol_porch - 0.01;
         waterLevel = waterLevel+0.002;
-        uroven_vody = vusota_basein *waterLevel;
+        uroven_vody = basinHeight *waterLevel;
         basin();
     }
 }
@@ -19,7 +19,7 @@ if (key[KEY_MINUS_PAD]  ){
     if(waterLevel>0.05){
         //pol_porch=pol_porch - 0.01;
         waterLevel = waterLevel-0.002;
-        uroven_vody = vusota_basein *waterLevel;
+        uroven_vody = basinHeight *waterLevel;
         basin();
     }
  }
@@ -33,7 +33,7 @@ if (key[KEY_UP] ){
 
 
 if (key[KEY_DOWN]  ){
-    if((alto-vusota_basein)<basinBottom){
+    if((alto-basinHeight)<basinBottom){
         basinBottom=basinBottom - 12;
     }
  }
@@ -41,7 +41,7 @@ if (key[KEY_DOWN]  ){
  if (key[KEY_7_PAD] ){
 
 numberTanks=numberTanks+2;
-vusota_basein=vusota_basein+73.4;
+basinHeight=basinHeight+73.4;
 ust();
 for (int u=0; u!=10000000; u++){
     u=u;
@@ -54,7 +54,7 @@ if (key[KEY_1_PAD]  ){
 }
 
 numberTanks=numberTanks-2;
-vusota_basein=vusota_basein-73.4;
+basinHeight=basinHeight-73.4;
 ust();
  }
 
@@ -78,7 +78,7 @@ if (key[KEY_2_PAD]  ){
         for (int u=0; u!=10000000; u++){
     u=u;
 }
-    vusota_basein=vusota_basein+0.3;
+    basinHeight=basinHeight+0.3;
 ust1();
 }
 
@@ -88,7 +88,7 @@ if (key[KEY_3_PAD]  ){
     u=u;
 }
 
-vusota_basein=vusota_basein-0.3;
+basinHeight=basinHeight-0.3;
 ust1();
  }
 
