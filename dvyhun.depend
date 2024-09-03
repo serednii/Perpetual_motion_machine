@@ -85,3 +85,22 @@
 
 1552174556 d:\двигун\include\klaviatura.h
 
+1725383256 source:i:\driverworks\main.cpp
+	<iostream>
+	<allegro.h>
+	<cstdlib>
+	<stdio.h>
+	<winalleg.h>
+	<cmath>
+	<string>
+	<sstream>
+	"include/barrel.h"
+	"include/basin.h"
+	"include/keyboard.h"
+
+1725303465 i:\driverworks\include\barrel.h
+
+1725304976 i:\driverworks\include\basin.h
+
+1725308139 i:\driverworks\include\keyboard.h
+

@@ -11,7 +11,7 @@ int kk = key[KEY_DOWN];
         //pol_porch=pol_porch - 0.01;
         hladina = hladina+0.002;
         uroven_vody = vusota_basein *hladina;
-        basein();
+        basin();
     }
 }
 
@@ -23,7 +23,7 @@ if (key[KEY_MINUS_PAD]  ){
         //pol_porch=pol_porch - 0.01;
         hladina = hladina-0.002;
         uroven_vody = vusota_basein *hladina;
-        basein();
+        basin();
     }
  }
 

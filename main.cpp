@@ -7,8 +7,8 @@
 #include <string>
 #include <sstream>
 
-#define ancho 1900 //1200
-#define alto 1200  //800
+#define ancho 1200 //1200
+#define alto 1600  //800
 
 using namespace std;
 int circle_x=200, circle_y=200, circle_r=100;
@@ -22,7 +22,7 @@ float xxx = 2030;
 float yyy = 1;
 int kll = 0;
 int odstup_horu_nuzu=300;
-float kol_bak=8+13;///30+1
+float kol_bak=16+13;///30+1
 int vusota_bocka = 80;
 float koof_dla_odstup_mij_bocka = 0.5;
 float odstup_mij_bockamu = vusota_bocka * koof_dla_odstup_mij_bocka;
@@ -45,10 +45,6 @@ float numbers[100];
 int arr_nom_boc[150];
 float  tt;
 
-
-//float l_1 = vusota_basein-odstup_horu_nuzu-odstup_horu_nuzu;
- //c=pi*d;75
-
 float r_1 = vusota_bocka*(koof_dla_odstup_mij_bocka+1)*6;
 float radius = r_1/(3.14);//float r_1 = 3.14*75*1.8;
 float r_2 = r_1;
@@ -64,7 +60,6 @@ void ust1();
 BITMAP *buffer;
 BITMAP * buffer_basein;
 BITMAP *buffer_bocka[3];
-//BITMAP *buffer_bocka_vuxod;
 BITMAP *buffer_text;
 
 
@@ -232,6 +227,7 @@ line(buffer_basein, x+centr, y+odstup_horu_nuzu, x+centr+25*cos(rlk), y+odstup_h
 
 ///************************************************************************************************
         if (numbers[a]<l_1+r_1+l_2+r_2 && numbers[a]>l_1+r_1+l_2){//ĳ������
+
                       float l = (numbers[a] -  l_1-r_1-l_2);
 
                         float t=l*(3.15/r_2);//2.95
@@ -249,15 +245,9 @@ line(buffer_basein, x+centr, y+odstup_horu_nuzu, x+centr+25*cos(rlk), y+odstup_h
 rotate_sprite(buffer_basein,buffer_bocka[1],x+centr-25*cos(rlk)-(hurina_bocka/2),y+odstup_horu_nuzu+l_1-25*sin(rlk)-(vusota_bocka/2),kutt-8400000);
 line(buffer_basein, centr, odstup_horu_nuzu+l_1, x+centr, y+odstup_horu_nuzu+l_1, 0xff0000);
 line(buffer_basein, x+centr, y+odstup_horu_nuzu+l_1, x+centr-25*cos(rlk), y+odstup_horu_nuzu+l_1-25*sin(rlk), 0xff0000);
-
-
                 }
-
 ///************************************************************************************************
-
-
     }
-
 }
 
 
