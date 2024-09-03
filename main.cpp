@@ -41,7 +41,7 @@ float l_1 = ((numberTanks - 1 - 12) / 2 * barrelHeight) * (coefficientForTheInde
 float l_2 = l_1;
 float basinHeight = l_1 + paddingTopBottom + paddingTopBottom;
 
-float basinBottom = 100;
+float basinBottom = 0;
 float surface = 0.95;
 float waterLevel = basinHeight * surface;
 
@@ -120,7 +120,7 @@ int main() {
   bufferBarrel[1] = create_bitmap(barrelWidth, barrelHeight);
   //bufferBarrel_vuxod = create_bitmap(barrelWidth/3, barrelHeight*0.2);
   buffer_text = create_bitmap(400, 800);
-  boccka boc[135];
+  //boccka boc[135];
 
   {
     int b = 1;

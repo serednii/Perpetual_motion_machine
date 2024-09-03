@@ -22,8 +22,8 @@ void basin() {
 
     for (float t = 3.24; t <= 6.18; t = t + 0.01) {
       float x, y;
-      x = 75 * (cos(t));
-      y = 75 * (sin(t));
+      x = 75 * (0.5 + 2 * cos(t));
+      y = 75 * (0.5 + 2 * sin(t));
       putpixel(bufferBasin, x + 313, y + paddingTopBottom, col);
     }
     for (float t = 6.18; t <= 6.18 + 3.33; t = t + 0.01) {
