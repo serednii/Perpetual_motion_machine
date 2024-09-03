@@ -8,5 +8,4 @@ void generator()
       if  (numberObject==5)halfObject = rand() % 3;
       if  (numberObject==6)halfObject = rand() % 1;
       if  (numberObject==7)halfObject = rand() % 1;
-
    }

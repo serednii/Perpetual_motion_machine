@@ -11,40 +11,40 @@
 #define alto 1600  //800
 
 using namespace std;
-int circle_x=200, circle_y=200, circle_r=100;
+const int circle_x=200, circle_y=200, circle_r=100;
 int camera_x = 0, camera_y = 0;
 bool pause = false;
 
-int center=350;
+const int center=350;
 
-float y = 1;
-int paddingTopBottom=300;
+const float y = 1;
+const int paddingTopBottom=300;
 float numberTanks=16+13;///30+1
-int barrelHeight = 80;
-float coefficientForTheIndentationBetweenBarrels = 0.5; 
-float indentationBetweenBarrels = barrelHeight * coefficientForTheIndentationBetweenBarrels;
+const int barrelHeight = 80;
+const float coefficientForTheIndentationBetweenBarrels = 0.5;
+const float indentationBetweenBarrels = barrelHeight * coefficientForTheIndentationBetweenBarrels;
 float l_1 = ((numberTanks-1-12)/2*barrelHeight)*(coefficientForTheIndentationBetweenBarrels+1);
 float l_2 = l_1;
 float basinHeight = l_1 + paddingTopBottom+paddingTopBottom;
 
-int basinWidth = 700;
-float basinBottom = 100; 
+const int basinWidth = 700;
+float basinBottom = 100;
 float waterLevel = 0.95;
 float uroven_vody = basinHeight * waterLevel;
 
-int barrelWidth = barrelHeight*0.6; 
-float rob_vusota = barrelHeight*0.8;
-float y_vusota=barrelHeight*0.2;
-float pol_porch = 0.2;//�� 0 �� 1s
+const int barrelWidth = barrelHeight*0.6;
+const float workingHeight = barrelHeight*0.8;
+const float y_vusota=barrelHeight*0.2;
+const float pol_porch = 0.2;//�� 0 �� 1s
 float numbers[100];
 int arr_nom_boc[150];
 float  tt;
 
 float r_1 = barrelHeight*(coefficientForTheIndentationBetweenBarrels+1)*6;
-float radius = r_1/(3.14);//float r_1 = 3.14*75*1.8;
+const float radius = r_1/(3.14);//float r_1 = 3.14*75*1.8;
 float r_2 = r_1;
 int dov_kruga =  l_1+l_2+r_1+r_2;
-int polovuna=radius+barrelWidth/2;
+const int polovuna=radius+barrelWidth/2;
 int num=0;
 float LL=barrelHeight*(coefficientForTheIndentationBetweenBarrels+1);//*63.917419;
 
@@ -178,7 +178,7 @@ clear_to_color(buffer_text, 0xdddddd);
 int   kutt=0;
 
                          kutt = 8400000/r_1*l;
-             
+
 
 rotate_sprite(buffer_basin,buffer_bocka[1],x+center+25*cos(rlk)-(barrelWidth/2),y+paddingTopBottom+25*sin(rlk)-(barrelHeight/2),kutt);
 
@@ -260,7 +260,7 @@ textprintf_ex(buffer_text, font, 10, 10, makecol(255, 100, 200),-1, "indentation
 textprintf_ex(buffer_text, font, 10, 20, makecol(255, 100, 200),-1, "basinHeight: %d", basinHeight);
 textprintf_ex(buffer_text, font, 10, 30, makecol(255, 100, 200),-1, "uroven_vody: %d", uroven_vody);
 textprintf_ex(buffer_text, font, 10, 40, makecol(255, 100, 200),-1, "basinHeight-uroven_vody: %d", basinHeight-uroven_vody);
-textprintf_ex(buffer_text, font, 10, 60, makecol(255, 100, 200),-1, "rob_vusota: %d", rob_vusota);
+textprintf_ex(buffer_text, font, 10, 60, makecol(255, 100, 200),-1, "workingHeight: %d", workingHeight);
 textprintf_ex(buffer_text, font, 10, 70, makecol(255, 100, 200),-1, "y_vusota: %d", y_vusota);
 textprintf_ex(buffer_text, font, 10, 80, makecol(255, 100, 200),-1, "dov_kruga: %d", dov_kruga);
 textprintf_ex(buffer_text, font, 10,100, makecol(255, 100, 200),-1, "r_2: %f", r_2);
