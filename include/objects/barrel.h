@@ -1,124 +1,104 @@
-
 //����� ����� ������������� ��� �����������
-void barrel(int x)
-{
-
+void barrel(int x) {
 
 }
 
 //�������� ���� ������ ����� ���� �� ����
-int zRightСheck(int a,int b)//� - ���������
-                               //b - � ��� ������� ��������� 0- �����
-                                //                             1- ����
-                                //                             2- ������
-                                //                             10- � ����� �����
+int zRightСheck(int a, int b) //� - ���������
+//b - � ��� ������� ��������� 0- �����
+//                             1- ����
+//                             2- ������
+//                             10- � ����� �����
 {
 
-//palka(vboku, krok, 0, 0);
-//13617097 ���� ����
-//14540253 ���� ����
+  //palka(vboku, krok, 0, 0);
+  //13617097 ���� ����
+  //14540253 ���� ����
 
-if (a==0)//��������   ���������� ���������� �� ����
-{
+  if (a == 0) //��������   ���������� ���������� �� ����
+  {
 
-if(b==0 || b==10){//�������� � ����
+    if (b == 0 || b == 10) { //�������� � ����
 
- if (getpixel(kopy_buffer0, vboku*KLITUNKA+(KLITUNKA/2), (krok+1)*KLITUNKA+(KLITUNKA/2))!=0xa0fded) return 1;
-  if (getpixel(kopy_buffer0, (vboku+1)*KLITUNKA+(KLITUNKA/2), (krok+2)*KLITUNKA+(KLITUNKA/2))!=0xa0fded) return 1;
-  if (getpixel(kopy_buffer0, (vboku+2)*KLITUNKA+(KLITUNKA/2), (krok+2)*KLITUNKA+(KLITUNKA/2))!=0xa0fded) return 1;
-}
-if(b==1 || b==10){ //�������� � ���
- if (getpixel(kopy_buffer0, (vboku)*KLITUNKA+(KLITUNKA/2), krok*KLITUNKA+(KLITUNKA/2))!=0xa0fded) return 1;
-  if (getpixel(kopy_buffer0,  (vboku-1)*KLITUNKA+(KLITUNKA/2), (krok+1)*KLITUNKA+(KLITUNKA/2))!=0xa0fded) return 1;
-}
+      if (getpixel(kopy_buffer0, vboku * KLITUNKA + (KLITUNKA / 2), (krok + 1) * KLITUNKA + (KLITUNKA / 2)) != 0xa0fded) return 1;
+      if (getpixel(kopy_buffer0, (vboku + 1) * KLITUNKA + (KLITUNKA / 2), (krok + 2) * KLITUNKA + (KLITUNKA / 2)) != 0xa0fded) return 1;
+      if (getpixel(kopy_buffer0, (vboku + 2) * KLITUNKA + (KLITUNKA / 2), (krok + 2) * KLITUNKA + (KLITUNKA / 2)) != 0xa0fded) return 1;
+    }
+    if (b == 1 || b == 10) { //�������� � ���
+      if (getpixel(kopy_buffer0, (vboku) * KLITUNKA + (KLITUNKA / 2), krok * KLITUNKA + (KLITUNKA / 2)) != 0xa0fded) return 1;
+      if (getpixel(kopy_buffer0, (vboku - 1) * KLITUNKA + (KLITUNKA / 2), (krok + 1) * KLITUNKA + (KLITUNKA / 2)) != 0xa0fded) return 1;
+    }
 
-if(b==2 || b==10){//�������� � �����
-if (getpixel(kopy_buffer0, (vboku+2)*KLITUNKA+(KLITUNKA/2), krok*KLITUNKA+(KLITUNKA/2))!=0xa0fded) return 1;
-  if (getpixel(kopy_buffer0,  (vboku+3)*KLITUNKA+(KLITUNKA/2), (krok+1)*KLITUNKA+(KLITUNKA/2))!=0xa0fded) return 1;
-}
+    if (b == 2 || b == 10) { //�������� � �����
+      if (getpixel(kopy_buffer0, (vboku + 2) * KLITUNKA + (KLITUNKA / 2), krok * KLITUNKA + (KLITUNKA / 2)) != 0xa0fded) return 1;
+      if (getpixel(kopy_buffer0, (vboku + 3) * KLITUNKA + (KLITUNKA / 2), (krok + 1) * KLITUNKA + (KLITUNKA / 2)) != 0xa0fded) return 1;
+    }
 
+  }
 
-}
+  if (a == 1) //�������� ���������� ���������� � ���
+  {
+    if (b == 0 || b == 10) { //������ � ����
+      if (getpixel(kopy_buffer0, vboku * KLITUNKA + (KLITUNKA / 2), (krok + 3) * KLITUNKA + (KLITUNKA / 2)) != 0xa0fded) return 1;
+      if (getpixel(kopy_buffer0, (vboku + 1) * KLITUNKA + (KLITUNKA / 2), (krok + 2) * KLITUNKA + (KLITUNKA / 2)) != 0xa0fded) return 1;
 
+    }
 
-if (a==1) //�������� ���������� ���������� � ���
-{
-                 if(b==0 || b==10){//������ � ����
-                                if (getpixel(kopy_buffer0, vboku*KLITUNKA+(KLITUNKA/2), (krok+3)*KLITUNKA+(KLITUNKA/2))!=0xa0fded) return 1;
-                                if (getpixel(kopy_buffer0, (vboku+1)*KLITUNKA+(KLITUNKA/2), (krok+2)*KLITUNKA+(KLITUNKA/2))!=0xa0fded) return 1;
+    if (b == 1 || b == 10) { //������ � ���
+      if (getpixel(kopy_buffer0, vboku * KLITUNKA + (KLITUNKA / 2), krok * KLITUNKA + (KLITUNKA / 2)) != 0xa0fded) return 1;
+      if (getpixel(kopy_buffer0, (vboku - 1) * KLITUNKA + (KLITUNKA / 2), (krok + 1) * KLITUNKA + (KLITUNKA / 2)) != 0xa0fded) return 1;
+      if (getpixel(kopy_buffer0, (vboku - 1) * KLITUNKA + (KLITUNKA / 2), (krok + 2) * KLITUNKA + (KLITUNKA / 2)) != 0xa0fded) return 1;
+    }
 
-                                  }
+    if (b == 2 || b == 10) { //������ � �����
+      if (getpixel(kopy_buffer0, (vboku + 2) * KLITUNKA + (KLITUNKA / 2), krok * KLITUNKA + (KLITUNKA / 2)) != 0xa0fded) return 1;
+      if (getpixel(kopy_buffer0, (vboku + 2) * KLITUNKA + (KLITUNKA / 2), (krok + 1) * KLITUNKA + (KLITUNKA / 2)) != 0xa0fded) return 1;
+      if (getpixel(kopy_buffer0, (vboku + 1) * KLITUNKA + (KLITUNKA / 2), (krok + 2) * KLITUNKA + (KLITUNKA / 2)) != 0xa0fded) return 1;
+    }
 
+  }
 
-                if(b==1 || b==10){//������ � ���
-                  if (getpixel(kopy_buffer0, vboku*KLITUNKA+(KLITUNKA/2), krok*KLITUNKA+(KLITUNKA/2))!=0xa0fded) return 1;
-                  if (getpixel(kopy_buffer0, (vboku-1)*KLITUNKA+(KLITUNKA/2), (krok+1)*KLITUNKA+(KLITUNKA/2))!=0xa0fded) return 1;
-                   if (getpixel(kopy_buffer0, (vboku-1)*KLITUNKA+(KLITUNKA/2), (krok+2)*KLITUNKA+(KLITUNKA/2))!=0xa0fded) return 1;
-                }
-
-               if(b==2 || b==10){//������ � �����
-                  if (getpixel(kopy_buffer0, (vboku+2)*KLITUNKA+(KLITUNKA/2), krok*KLITUNKA+(KLITUNKA/2))!=0xa0fded) return 1;
-                  if (getpixel(kopy_buffer0, (vboku+2)*KLITUNKA+(KLITUNKA/2), (krok+1)*KLITUNKA+(KLITUNKA/2))!=0xa0fded) return 1;
-                   if (getpixel(kopy_buffer0, (vboku+1)*KLITUNKA+(KLITUNKA/2), (krok+2)*KLITUNKA+(KLITUNKA/2))!=0xa0fded) return 1;
-                }
-
-}
-
-
-
-
-
-return 0;
-
+  return 0;
 
 }
 
+void zRightRotate() {
 
-void zRightRotate()
-{
+  if (halfObject == 0) {
 
-    if (halfObject==0)
-            {
+    if (getpixel(kopy_buffer0, (vboku) * KLITUNKA + (KLITUNKA / 2), (krok) * KLITUNKA + (KLITUNKA / 2)) != 0xa0fded ||
+      getpixel(kopy_buffer0, (vboku + 1) * KLITUNKA + (KLITUNKA / 2), krok * KLITUNKA + (KLITUNKA / 2)) != 0xa0fded ||
+      getpixel(kopy_buffer0, (vboku + 2) * KLITUNKA + (KLITUNKA / 2), krok * KLITUNKA + (KLITUNKA / 2)) != 0xa0fded ||
+      getpixel(kopy_buffer0, (vboku + 2) * KLITUNKA + (KLITUNKA / 2), (krok + 1) * KLITUNKA + (KLITUNKA / 2)) != 0xa0fded) {
 
-if (getpixel(kopy_buffer0, (vboku)*KLITUNKA+(KLITUNKA/2), (krok)*KLITUNKA+(KLITUNKA/2)) != 0xa0fded ||
-     getpixel(kopy_buffer0, (vboku+1)*KLITUNKA+(KLITUNKA/2), krok*KLITUNKA+(KLITUNKA/2)) != 0xa0fded ||
-    getpixel(kopy_buffer0, (vboku+2)*KLITUNKA+(KLITUNKA/2), krok*KLITUNKA+(KLITUNKA/2)) != 0xa0fded ||
-     getpixel(kopy_buffer0, (vboku+2)*KLITUNKA+(KLITUNKA/2), (krok+1)*KLITUNKA+(KLITUNKA/2)) != 0xa0fded) {
+    } else {
+      halfObject = 1, krok -= 1, vboku += 1;
+      //�������� ����� �� ����������� ������
+    }
 
+    //������� ����� �����
+    return;
 
-                                                                                                            }else{halfObject=1,krok-=1, vboku+=1;
-                                                                                                            //�������� ����� �� ����������� ������
-                                                                                                            }
+  }
 
-                                                                                                            //������� ����� �����
-return;
+  if (halfObject == 1) { //halfObject=1;//�������� ����� �� ����������� ������
 
-}
+    if (getpixel(kopy_buffer0, vboku * KLITUNKA + (KLITUNKA / 2), (krok + 1) * KLITUNKA + (KLITUNKA / 2)) != 0xa0fded ||
+      getpixel(kopy_buffer0, vboku * KLITUNKA + (KLITUNKA / 2), (krok + 2) * KLITUNKA + (KLITUNKA / 2)) != 0xa0fded) {
+      return;
+    }
 
-if (halfObject==1)
-            {//halfObject=1;//�������� ����� �� ����������� ������
+    if (getpixel(kopy_buffer0, (vboku - 1) * KLITUNKA + (KLITUNKA / 2), (krok + 1) * KLITUNKA + (KLITUNKA / 2)) == 0xa0fded &&
+      getpixel(kopy_buffer0, (vboku - 1) * KLITUNKA + (KLITUNKA / 2), (krok + 2) * KLITUNKA + (KLITUNKA / 2)) == 0xa0fded) {
+      halfObject = 0, vboku -= 1, krok += 1; //�������� ����� �� ����������� ������
+    } else {
+      if (getpixel(kopy_buffer0, (vboku + 2) * KLITUNKA + (KLITUNKA / 2), (krok + 1) * KLITUNKA + (KLITUNKA / 2)) == 0xa0fded &&
+        getpixel(kopy_buffer0, (vboku + 2) * KLITUNKA + (KLITUNKA / 2), (krok + 2) * KLITUNKA + (KLITUNKA / 2)) == 0xa0fded) {
+        halfObject = 0, krok -= 1; //�������� ����� �� ����������� ������
+      }
 
-if (getpixel(kopy_buffer0, vboku*KLITUNKA+(KLITUNKA/2), (krok+1)*KLITUNKA+(KLITUNKA/2)) != 0xa0fded ||
-     getpixel(kopy_buffer0, vboku*KLITUNKA+(KLITUNKA/2), (krok+2)*KLITUNKA+(KLITUNKA/2)) != 0xa0fded) {
-                                                                                                            return;
-                                                                                                            }
-
-
-if (getpixel(kopy_buffer0, (vboku-1)*KLITUNKA+(KLITUNKA/2), (krok+1)*KLITUNKA+(KLITUNKA/2)) == 0xa0fded &&
-     getpixel(kopy_buffer0, (vboku-1)*KLITUNKA+(KLITUNKA/2), (krok+2)*KLITUNKA+(KLITUNKA/2)) == 0xa0fded)
-            {
-         halfObject=0, vboku-=1, krok+=1;//�������� ����� �� ����������� ������
-            }else
-            {
-                if (getpixel(kopy_buffer0, (vboku+2)*KLITUNKA+(KLITUNKA/2), (krok+1)*KLITUNKA+(KLITUNKA/2)) == 0xa0fded &&
-            getpixel(kopy_buffer0, (vboku+2)*KLITUNKA+(KLITUNKA/2), (krok+2)*KLITUNKA+(KLITUNKA/2)) == 0xa0fded) {halfObject=0, krok-=1;//�������� ����� �� ����������� ������
-                                                                                                                }
-
-            }
-return;
-}
-//*************************************************************************************
+    }
+    return;
+  }
 
 }
-
-
