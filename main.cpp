@@ -17,18 +17,15 @@ bool pause = false;
 
 int center=350;
 
-float rrr=100;
-float xxx = 2030;
-float yyy = 1;
-int kll = 0;
-int odstup_horu_nuzu=300;
-float kol_bak=16+13;///30+1
-int vusota_bocka = 80;
+float y = 1;
+int paddingTopBottom=300;
+float numberTanks=16+13;///30+1
+int barrelHeight = 80;
 float koof_dla_odstup_mij_bocka = 0.5;
-float odstup_mij_bockamu = vusota_bocka * koof_dla_odstup_mij_bocka;
-float l_1 = ((kol_bak-1-12)/2*vusota_bocka)*(koof_dla_odstup_mij_bocka+1);
+float odstup_mij_bockamu = barrelHeight * koof_dla_odstup_mij_bocka;
+float l_1 = ((numberTanks-1-12)/2*barrelHeight)*(koof_dla_odstup_mij_bocka+1);
 float l_2 = l_1;
-float vusota_basein= l_1+odstup_horu_nuzu+odstup_horu_nuzu;
+float vusota_basein= l_1+paddingTopBottom+paddingTopBottom;
 
 int hurina_basein = 700;
 float basinBottom = 100; 
@@ -37,21 +34,21 @@ float uroven_vody = vusota_basein * waterLevel;
 
 
 
-int hurina_bocka = vusota_bocka*0.6;
-float rob_vusota = vusota_bocka*0.8;
-float y_vusota=vusota_bocka*0.2;
+int hurina_bocka = barrelHeight*0.6;
+float rob_vusota = barrelHeight*0.8;
+float y_vusota=barrelHeight*0.2;
 float pol_porch = 0.2;//�� 0 �� 1s
 float numbers[100];
 int arr_nom_boc[150];
 float  tt;
 
-float r_1 = vusota_bocka*(koof_dla_odstup_mij_bocka+1)*6;
+float r_1 = barrelHeight*(koof_dla_odstup_mij_bocka+1)*6;
 float radius = r_1/(3.14);//float r_1 = 3.14*75*1.8;
 float r_2 = r_1;
 int dov_kruga =  l_1+l_2+r_1+r_2;
 int polovuna=radius+hurina_bocka/2;
 int num=0;
-float LL=vusota_bocka*(koof_dla_odstup_mij_bocka+1);//*63.917419;
+float LL=barrelHeight*(koof_dla_odstup_mij_bocka+1);//*63.917419;
 
 void ust();
 void ust1();
@@ -119,14 +116,14 @@ set_color_depth(32);
 set_gfx_mode(GFX_AUTODETECT_WINDOWED, ancho, alto, 0, 0);
 buffer = create_bitmap(ancho, alto);
 buffer_basin = create_bitmap(hurina_basein, vusota_basein);
-buffer_bocka[1] = create_bitmap(hurina_bocka, vusota_bocka);
-//buffer_bocka_vuxod = create_bitmap(hurina_bocka/3, vusota_bocka*0.2);
+buffer_bocka[1] = create_bitmap(hurina_bocka, barrelHeight);
+//buffer_bocka_vuxod = create_bitmap(hurina_bocka/3, barrelHeight*0.2);
 buffer_text = create_bitmap(400, 800);
 boccka boc[135];
 
 {
 int b=1;
-for (int a=0; a<= dov_kruga+70; a=a+odstup_mij_bockamu+vusota_bocka)
+for (int a=0; a<= dov_kruga+70; a=a+odstup_mij_bockamu+barrelHeight)
 {
     numbers[b]=a;
     arr_nom_boc[b] = b;
@@ -153,7 +150,7 @@ basin();
 
 {
 
-    for (int a=0; a!=kol_bak; a++)
+    for (int a=0; a!=numberTanks; a++)
     {
     num =a;
     barrel();
@@ -163,7 +160,7 @@ for (int u=0; u!=20; u++){
 clear_to_color(buffer_text, 0xdddddd);
 
         if (numbers[a]<l_1 && numbers[1] > 0){
-            rotate_sprite(buffer_basin,buffer_bocka[1],center-polovuna-(hurina_bocka/2)-4,vusota_basein-odstup_horu_nuzu-numbers[a],0);
+            rotate_sprite(buffer_basin,buffer_bocka[1],center-polovuna-(hurina_bocka/2)-4,vusota_basein-paddingTopBottom-numbers[a],0);
         }
         if (numbers[a]<l_1+r_1 && numbers[a]>l_1){//ĳ������
                       float l = (numbers[a] - l_1);
@@ -185,18 +182,18 @@ int   kutt=0;
                          kutt = 8400000/r_1*l;
              
 
-rotate_sprite(buffer_basin,buffer_bocka[1],x+center+25*cos(rlk)-(hurina_bocka/2),y+odstup_horu_nuzu+25*sin(rlk)-(vusota_bocka/2),kutt);
+rotate_sprite(buffer_basin,buffer_bocka[1],x+center+25*cos(rlk)-(hurina_bocka/2),y+paddingTopBottom+25*sin(rlk)-(barrelHeight/2),kutt);
 
 
 
-line(buffer_basin, center, odstup_horu_nuzu, x+center, y+odstup_horu_nuzu, 0xff0000);
-line(buffer_basin, x+center, y+odstup_horu_nuzu, x+center+25*cos(rlk), y+odstup_horu_nuzu+25*sin(rlk), 0xff0000);
+line(buffer_basin, center, paddingTopBottom, x+center, y+paddingTopBottom, 0xff0000);
+line(buffer_basin, x+center, y+paddingTopBottom, x+center+25*cos(rlk), y+paddingTopBottom+25*sin(rlk), 0xff0000);
 
 
                 }
 
         if (numbers[a]<l_1+r_1+l_2 && numbers[a]>l_1+r_1){
-            rotate_sprite(buffer_basin,buffer_bocka[1],center+polovuna-(hurina_bocka/2)+1,vusota_basein-odstup_horu_nuzu+numbers[a]-l_1-r_1-l_2-(vusota_bocka),8400000);
+            rotate_sprite(buffer_basin,buffer_bocka[1],center+polovuna-(hurina_bocka/2)+1,vusota_basein-paddingTopBottom+numbers[a]-l_1-r_1-l_2-(barrelHeight),8400000);
 
         }
 
@@ -216,9 +213,9 @@ line(buffer_basin, x+center, y+odstup_horu_nuzu, x+center+25*cos(rlk), y+odstup_
                         ///line x,y,x1,y1
                         ///line x1,y1,x1+20*sin(r),y1+20*cos(r)
                       int   kutt = 8400000/r_2*l;
-rotate_sprite(buffer_basin,buffer_bocka[1],x+center-25*cos(rlk)-(hurina_bocka/2),y+odstup_horu_nuzu+l_1-25*sin(rlk)-(vusota_bocka/2),kutt-8400000);
-line(buffer_basin, center, odstup_horu_nuzu+l_1, x+center, y+odstup_horu_nuzu+l_1, 0xff0000);
-line(buffer_basin, x+center, y+odstup_horu_nuzu+l_1, x+center-25*cos(rlk), y+odstup_horu_nuzu+l_1-25*sin(rlk), 0xff0000);
+rotate_sprite(buffer_basin,buffer_bocka[1],x+center-25*cos(rlk)-(hurina_bocka/2),y+paddingTopBottom+l_1-25*sin(rlk)-(barrelHeight/2),kutt-8400000);
+line(buffer_basin, center, paddingTopBottom+l_1, x+center, y+paddingTopBottom+l_1, 0xff0000);
+line(buffer_basin, x+center, y+paddingTopBottom+l_1, x+center-25*cos(rlk), y+paddingTopBottom+l_1-25*sin(rlk), 0xff0000);
                 }
 ///************************************************************************************************
     }
@@ -230,19 +227,19 @@ line(buffer_basin, x+center, y+odstup_horu_nuzu+l_1, x+center-25*cos(rlk), y+ods
 
 //************************************************************************************************
 
-//if (numbers[0]<(vusota_bocka-1)){
+//if (numbers[0]<(barrelHeight-1)){
 {
 if (!pause)
        {
-for (int a=0; a!=kol_bak; a++){
-if (numbers[a]>(kol_bak-1)*LL  ){///2030
+for (int a=0; a!=numberTanks; a++){
+if (numbers[a]>(numberTanks-1)*LL  ){///2030
     numbers[a]=0;
     }
     else{
-            numbers[a]=numbers[a]+yyy;
+            numbers[a]=numbers[a]+y;
     }
     if (numbers[a]<0 ){
-    numbers[a]=(kol_bak+1)*LL ;
+    numbers[a]=(numberTanks+1)*LL ;
     }
 }
 }
@@ -269,12 +266,12 @@ textprintf_ex(buffer_text, font, 10, 60, makecol(255, 100, 200),-1, "rob_vusota:
 textprintf_ex(buffer_text, font, 10, 70, makecol(255, 100, 200),-1, "y_vusota: %d", y_vusota);
 textprintf_ex(buffer_text, font, 10, 80, makecol(255, 100, 200),-1, "dov_kruga: %d", dov_kruga);
 textprintf_ex(buffer_text, font, 10,100, makecol(255, 100, 200),-1, "r_2: %f", r_2);
-textprintf_ex(buffer_text, font, 10, 110, makecol(255, 100, 200),-1, "kol_bak: %f", kol_bak-1);
+textprintf_ex(buffer_text, font, 10, 110, makecol(255, 100, 200),-1, "numberTanks: %f", numberTanks-1);
 textprintf_ex(buffer_text, font, 10, 120, makecol(255, 100, 200),-1, "vusota_basein: %f", vusota_basein);
 textprintf_ex(buffer_text, font, 10, 130, makecol(255, 100, 200),-1, "l_1: %f", l_1);
 textprintf_ex(buffer_text, font, 10, 140, makecol(255, 100, 200),-1, "r_1: %f", r_1);
 textprintf_ex(buffer_text, font, 10, 150, makecol(255, 100, 200),-1, "radius: %f", radius);
-textprintf_ex(buffer_text, font, 10, 160, makecol(255, 100, 200),-1, "vusota_bocka: %d", vusota_bocka);
+textprintf_ex(buffer_text, font, 10, 160, makecol(255, 100, 200),-1, "barrelHeight: %d", barrelHeight);
 textprintf_ex(buffer_text, font, 10, 170, makecol(255, 100, 200),-1, "hurina_bocka: %d", hurina_bocka);
 
         textprintf_ex(buffer_text, font, 10, 190, makecol(255, 100, 200),-1, "t: %f", tt);
@@ -364,7 +361,7 @@ END_OF_MAIN();
 void ust(){
 ///********************************************
 uroven_vody = vusota_basein *waterLevel;
-l_1 = vusota_basein-odstup_horu_nuzu-odstup_horu_nuzu;
+l_1 = vusota_basein-paddingTopBottom-paddingTopBottom;
 l_2 = l_1;
 r_1 = 3.14*75*1.8;
 r_2 = r_1;
@@ -388,7 +385,7 @@ for (int a=0; a<= dov_kruga+70; a=a+68)
 void ust1(){
 ///********************************************
 uroven_vody = vusota_basein *waterLevel;
-l_1 = vusota_basein-odstup_horu_nuzu-odstup_horu_nuzu;
+l_1 = vusota_basein-paddingTopBottom-paddingTopBottom;
 l_2 = l_1;
 r_1 = 3.14*75*1.8;
 r_2 = r_1;

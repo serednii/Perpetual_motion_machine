@@ -10,7 +10,6 @@ void lRight(int x, int y, int half, int pole)
 
 const int HURUNA_ELEMENTA=KLITUNKA-4;
 //y=1;
-//yyy = 0;
 //pole = 1;
 
 if (pole==0)
