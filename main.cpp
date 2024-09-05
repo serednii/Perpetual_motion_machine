@@ -140,72 +140,49 @@ int main() {
   while (!key[KEY_ESC]) {
 
     keyboard();
-
     //waterLevel = basinHeight *0.75;
-    barrel();
+    //barrel();
     basin();
 
     {
-
       for (int a = 0; a != numberTanks; a++) {
         num = a;
         barrel();
-        for (int u = 0; u != 20; u++) {
-          u = u;
-        }
         clear_to_color(buffer_text, 0xdddddd);
-
+      //left vertical
         if (numbers[a] < l_1 && numbers[1] > 0) {
           rotate_sprite(bufferBasin, bufferBarrel[1], center - half - (barrelWidth / 2) - 4, basinHeight - paddingTopBottom - numbers[a], 0);
         }
+        //top circle
         if (numbers[a] < l_1 + r_1 && numbers[a] > l_1) { //ĳ������
           float l = (numbers[a] - l_1);
-
           float t = 3.14 + l * (3.15 / r_1); //2.95
-
           float x, y, x1, y1;
-
           float rad = half;
           x = (rad * (cos(t))); ///68
           y = (rad * (sin(t))); ///80
           float rlk = t - 1.5;
-
-          ///line x,y,x1,y1
-          ///line x1,y1,x1+20*sin(r),y1+20*cos(r)
-
-          int kutt = 0;
-
-          kutt = 8400000 / r_1 * l;
-
-          rotate_sprite(bufferBasin, bufferBarrel[1], x + center + 25 * cos(rlk) - (barrelWidth / 2), y + paddingTopBottom + 25 * sin(rlk) - (barrelHeight / 2), kutt);
-
+          int angle = 0;
+          angle = 8400000 / r_1 * l;
+          rotate_sprite(bufferBasin, bufferBarrel[1], x + center + 25 * cos(rlk) - (barrelWidth / 2), y + paddingTopBottom + 25 * sin(rlk) - (barrelHeight / 2), angle);
           line(bufferBasin, center, paddingTopBottom, x + center, y + paddingTopBottom, 0xff0000);
           line(bufferBasin, x + center, y + paddingTopBottom, x + center + 25 * cos(rlk), y + paddingTopBottom + 25 * sin(rlk), 0xff0000);
-
         }
-
+        // right vertical
         if (numbers[a] < l_1 + r_1 + l_2 && numbers[a] > l_1 + r_1) {
           rotate_sprite(bufferBasin, bufferBarrel[1], center + half - (barrelWidth / 2) + 1, basinHeight - paddingTopBottom + numbers[a] - l_1 - r_1 - l_2 - (barrelHeight), 8400000);
-
         }
-
+        //bottom 
         if (numbers[a] < l_1 + r_1 + l_2 + r_2 && numbers[a] > l_1 + r_1 + l_2) { //ĳ������
-
           float l = (numbers[a] - l_1 - r_1 - l_2);
-
           float t = l * (3.15 / r_2); //2.95
-
           float x, y;
-
           float rad = half;
           x = (rad * (cos(t))); ///68
           y = (rad * (sin(t))); ///80
           float rlk = t - 1.5 + 3.14;
-
-          ///line x,y,x1,y1
-          ///line x1,y1,x1+20*sin(r),y1+20*cos(r)
-          int kutt = 8400000 / r_2 * l;
-          rotate_sprite(bufferBasin, bufferBarrel[1], x + center - 25 * cos(rlk) - (barrelWidth / 2), y + paddingTopBottom + l_1 - 25 * sin(rlk) - (barrelHeight / 2), kutt - 8400000);
+          int angle = 8400000 / r_2 * l;
+          rotate_sprite(bufferBasin, bufferBarrel[1], x + center - 25 * cos(rlk) - (barrelWidth / 2), y + paddingTopBottom + l_1 - 25 * sin(rlk) - (barrelHeight / 2), angle - 8400000);
           line(bufferBasin, center, paddingTopBottom + l_1, x + center, y + paddingTopBottom + l_1, 0xff0000);
           line(bufferBasin, x + center, y + paddingTopBottom + l_1, x + center - 25 * cos(rlk), y + paddingTopBottom + l_1 - 25 * sin(rlk), 0xff0000);
         }
