@@ -76,7 +76,7 @@ void drawCircle(int x0, int y0, int radius) {
     r1 = r * g;
     x = x + 200 + (x0 * cos(r1) - y0 * sin(r1));
     y = y + 200 + (x0 * sin(r1) - y0 * cos(r1));
-    _putPixel(bufferBasin, x, y, 0x000000);
+    putPixel(bufferBasin, x, y, 0x000000);
   }
 }
 
@@ -116,16 +116,13 @@ int main() {
   buffer = create_bitmap(ancho, alto);
   bufferBasin = create_bitmap(basinWidth, basinHeight);
   bufferBarrel[1] = create_bitmap(barrelWidth, barrelHeight);
-  //bufferBarrel_vuxod = create_bitmap(barrelWidth/3, barrelHeight*0.2);
   buffer_text = create_bitmap(400, 800);
-  //boccka boc[135];
 
   {
     int b = 1;
     for (int a = 0; a <= circleLength + 70; a = a + indentationBetweenBarrels + barrelHeight) {
       numbers[b] = a;
       arrayNumberBarrel[b] = b;
-      // cout<<"numbers[b] = "<<numbers[b-1]<<"  "<<b<<"  "<<endl;
       cout << "arrayNumberBarrel[b] = " << arrayNumberBarrel[b] << endl;
       b++;
     }
