@@ -3,6 +3,8 @@ void zRight(int x, int y, int half, int pole) //Z_vpravo
 {
 
   const int widthElement = cell - 4;
+  const int color = 0x806040;
+  const int color1 = 0xf0f00f;
 
   if (pole == 0) {
     x = 2 + (cell * x);
@@ -15,39 +17,39 @@ void zRight(int x, int y, int half, int pole) //Z_vpravo
   if (half == 0)
 
   {
-    rectfill(copyBuffer_0, x, y, x + widthElement, y + widthElement, 0x806040);
-    rectfill(copyBuffer_0, x + 2, y + 2, x + widthElement - 2, y + widthElement - 2, 0xf0f00f);
+    rectfill(copyBuffer_0, x, y, x + widthElement, y + widthElement, color);
+    rectfill(copyBuffer_0, x + 2, y + 2, x + widthElement - 2, y + widthElement - 2, color1);
 
     x += cell;
 
-    rectfill(copyBuffer_0, x, y, x + widthElement, y + widthElement, 0x806040);
-    rectfill(copyBuffer_0, x + 2, y + 2, x + widthElement - 2, y + widthElement - 2, 0xf0f00f);
+    rectfill(copyBuffer_0, x, y, x + widthElement, y + widthElement, color);
+    rectfill(copyBuffer_0, x + 2, y + 2, x + widthElement - 2, y + widthElement - 2, color1);
     y += cell;
-    rectfill(copyBuffer_0, x, y, x + widthElement, y + widthElement, 0x806040);
-    rectfill(copyBuffer_0, x + 2, y + 2, x + widthElement - 2, y + widthElement - 2, 0xf0f00f);
+    rectfill(copyBuffer_0, x, y, x + widthElement, y + widthElement, color);
+    rectfill(copyBuffer_0, x + 2, y + 2, x + widthElement - 2, y + widthElement - 2, color1);
 
     x += cell;
 
-    rectfill(copyBuffer_0, x, y, x + widthElement, y + widthElement, 0x806040);
-    rectfill(copyBuffer_0, x + 2, y + 2, x + widthElement - 2, y + widthElement - 2, 0xf0f00f);
+    rectfill(copyBuffer_0, x, y, x + widthElement, y + widthElement, color);
+    rectfill(copyBuffer_0, x + 2, y + 2, x + widthElement - 2, y + widthElement - 2, color1);
   }
 
   if (half == 1) {
     y += cell;
-    rectfill(copyBuffer_0, x, y, x + widthElement, y + widthElement, 0x806040);
-    rectfill(copyBuffer_0, x + 2, y + 2, x + widthElement - 2, y + widthElement - 2, 0xf0f00f);
+    rectfill(copyBuffer_0, x, y, x + widthElement, y + widthElement, color);
+    rectfill(copyBuffer_0, x + 2, y + 2, x + widthElement - 2, y + widthElement - 2, color1);
 
     y += cell;
-    rectfill(copyBuffer_0, x, y, x + widthElement, y + widthElement, 0x806040);
-    rectfill(copyBuffer_0, x + 2, y + 2, x + widthElement - 2, y + widthElement - 2, 0xf0f00f);
+    rectfill(copyBuffer_0, x, y, x + widthElement, y + widthElement, color);
+    rectfill(copyBuffer_0, x + 2, y + 2, x + widthElement - 2, y + widthElement - 2, color1);
     x += cell;
     y -= cell;
-    rectfill(copyBuffer_0, x, y, x + widthElement, y + widthElement, 0x806040);
-    rectfill(copyBuffer_0, x + 2, y + 2, x + widthElement - 2, y + widthElement - 2, 0xf0f00f);
+    rectfill(copyBuffer_0, x, y, x + widthElement, y + widthElement, color);
+    rectfill(copyBuffer_0, x + 2, y + 2, x + widthElement - 2, y + widthElement - 2, color1);
     y -= cell;
 
-    rectfill(copyBuffer_0, x, y, x + widthElement, y + widthElement, 0x806040);
-    rectfill(copyBuffer_0, x + 2, y + 2, x + widthElement - 2, y + widthElement - 2, 0xf0f00f);
+    rectfill(copyBuffer_0, x, y, x + widthElement, y + widthElement, color);
+    rectfill(copyBuffer_0, x + 2, y + 2, x + widthElement - 2, y + widthElement - 2, color1);
   }
 
 }
@@ -56,25 +58,24 @@ int zRightCheck(int a, int b)
 
 {
 
-
-
+  const int color = color;
   if (a == 0) 
   {
 
     if (b == 0 || b == 10) { /
 
-      if (getpixel(copyBuffer_0, side * cell + (cell / 2), (step + 1) * cell + (cell / 2)) != 0xa0fded) return 1;
-      if (getpixel(copyBuffer_0, (side + 1) * cell + (cell / 2), (step + 2) * cell + (cell / 2)) != 0xa0fded) return 1;
-      if (getpixel(copyBuffer_0, (side + 2) * cell + (cell / 2), (step + 2) * cell + (cell / 2)) != 0xa0fded) return 1;
+      if (getPixel(copyBuffer_0, side * cell + (cell / 2), (step + 1) * cell + (cell / 2)) != color) return 1;
+      if (getPixel(copyBuffer_0, (side + 1) * cell + (cell / 2), (step + 2) * cell + (cell / 2)) != color) return 1;
+      if (getPixel(copyBuffer_0, (side + 2) * cell + (cell / 2), (step + 2) * cell + (cell / 2)) != color) return 1;
     }
     if (b == 1 || b == 10) { 
-      if (getpixel(copyBuffer_0, (side) * cell + (cell / 2), step * cell + (cell / 2)) != 0xa0fded) return 1;
-      if (getpixel(copyBuffer_0, (side - 1) * cell + (cell / 2), (step + 1) * cell + (cell / 2)) != 0xa0fded) return 1;
+      if (getPixel(copyBuffer_0, (side) * cell + (cell / 2), step * cell + (cell / 2)) != color) return 1;
+      if (getPixel(copyBuffer_0, (side - 1) * cell + (cell / 2), (step + 1) * cell + (cell / 2)) != color) return 1;
     }
 
     if (b == 2 || b == 10) { 
-      if (getpixel(copyBuffer_0, (side + 2) * cell + (cell / 2), step * cell + (cell / 2)) != 0xa0fded) return 1;
-      if (getpixel(copyBuffer_0, (side + 3) * cell + (cell / 2), (step + 1) * cell + (cell / 2)) != 0xa0fded) return 1;
+      if (getPixel(copyBuffer_0, (side + 2) * cell + (cell / 2), step * cell + (cell / 2)) != color) return 1;
+      if (getPixel(copyBuffer_0, (side + 3) * cell + (cell / 2), (step + 1) * cell + (cell / 2)) != color) return 1;
     }
 
   }
@@ -82,21 +83,21 @@ int zRightCheck(int a, int b)
   if (a == 1) 
   {
     if (b == 0 || b == 10) { 
-      if (getpixel(copyBuffer_0, side * cell + (cell / 2), (step + 3) * cell + (cell / 2)) != 0xa0fded) return 1;
-      if (getpixel(copyBuffer_0, (side + 1) * cell + (cell / 2), (step + 2) * cell + (cell / 2)) != 0xa0fded) return 1;
+      if (getPixel(copyBuffer_0, side * cell + (cell / 2), (step + 3) * cell + (cell / 2)) != color) return 1;
+      if (getPixel(copyBuffer_0, (side + 1) * cell + (cell / 2), (step + 2) * cell + (cell / 2)) != color) return 1;
 
     }
 
     if (b == 1 || b == 10) { 
-      if (getpixel(copyBuffer_0, side * cell + (cell / 2), step * cell + (cell / 2)) != 0xa0fded) return 1;
-      if (getpixel(copyBuffer_0, (side - 1) * cell + (cell / 2), (step + 1) * cell + (cell / 2)) != 0xa0fded) return 1;
-      if (getpixel(copyBuffer_0, (side - 1) * cell + (cell / 2), (step + 2) * cell + (cell / 2)) != 0xa0fded) return 1;
+      if (getPixel(copyBuffer_0, side * cell + (cell / 2), step * cell + (cell / 2)) != color) return 1;
+      if (getPixel(copyBuffer_0, (side - 1) * cell + (cell / 2), (step + 1) * cell + (cell / 2)) != color) return 1;
+      if (getPixel(copyBuffer_0, (side - 1) * cell + (cell / 2), (step + 2) * cell + (cell / 2)) != color) return 1;
     }
 
     if (b == 2 || b == 10) {
-      if (getpixel(copyBuffer_0, (side + 2) * cell + (cell / 2), step * cell + (cell / 2)) != 0xa0fded) return 1;
-      if (getpixel(copyBuffer_0, (side + 2) * cell + (cell / 2), (step + 1) * cell + (cell / 2)) != 0xa0fded) return 1;
-      if (getpixel(copyBuffer_0, (side + 1) * cell + (cell / 2), (step + 2) * cell + (cell / 2)) != 0xa0fded) return 1;
+      if (getPixel(copyBuffer_0, (side + 2) * cell + (cell / 2), step * cell + (cell / 2)) != color) return 1;
+      if (getPixel(copyBuffer_0, (side + 2) * cell + (cell / 2), (step + 1) * cell + (cell / 2)) != color) return 1;
+      if (getPixel(copyBuffer_0, (side + 1) * cell + (cell / 2), (step + 2) * cell + (cell / 2)) != color) return 1;
     }
 
   }
@@ -106,38 +107,35 @@ int zRightCheck(int a, int b)
 }
 
 void zRightRotate() {
+  const int color = color;
 
   if (halfObject == 0) {
 
-    if (getpixel(copyBuffer_0, (side) * cell + (cell / 2), (step) * cell + (cell / 2)) != 0xa0fded ||
-      getpixel(copyBuffer_0, (side + 1) * cell + (cell / 2), step * cell + (cell / 2)) != 0xa0fded ||
-      getpixel(copyBuffer_0, (side + 2) * cell + (cell / 2), step * cell + (cell / 2)) != 0xa0fded ||
-      getpixel(copyBuffer_0, (side + 2) * cell + (cell / 2), (step + 1) * cell + (cell / 2)) != 0xa0fded) {
-
+    if (getPixel(copyBuffer_0, (side) * cell + (cell / 2), (step) * cell + (cell / 2)) != color ||
+      getPixel(copyBuffer_0, (side + 1) * cell + (cell / 2), step * cell + (cell / 2)) != color ||
+      getPixel(copyBuffer_0, (side + 2) * cell + (cell / 2), step * cell + (cell / 2)) != color ||
+      getPixel(copyBuffer_0, (side + 2) * cell + (cell / 2), (step + 1) * cell + (cell / 2)) != color) {
     } else {
       halfObject = 1, step -= 1, side += 1;
-      //�������� ����� �� ����������� ������
     }
-
-    //������� ����� �����
     return;
 
   }
 
-  if (halfObject == 1) { //halfObject=1;//�������� ����� �� ����������� ������
+  if (halfObject == 1) { 
 
-    if (getpixel(copyBuffer_0, side * cell + (cell / 2), (step + 1) * cell + (cell / 2)) != 0xa0fded ||
-      getpixel(copyBuffer_0, side * cell + (cell / 2), (step + 2) * cell + (cell / 2)) != 0xa0fded) {
+    if (getPixel(copyBuffer_0, side * cell + (cell / 2), (step + 1) * cell + (cell / 2)) != color ||
+      getPixel(copyBuffer_0, side * cell + (cell / 2), (step + 2) * cell + (cell / 2)) != color) {
       return;
     }
 
-    if (getpixel(copyBuffer_0, (side - 1) * cell + (cell / 2), (step + 1) * cell + (cell / 2)) == 0xa0fded &&
-      getpixel(copyBuffer_0, (side - 1) * cell + (cell / 2), (step + 2) * cell + (cell / 2)) == 0xa0fded) {
-      halfObject = 0, side -= 1, step += 1; //�������� ����� �� ����������� ������
+    if (getPixel(copyBuffer_0, (side - 1) * cell + (cell / 2), (step + 1) * cell + (cell / 2)) == color &&
+      getPixel(copyBuffer_0, (side - 1) * cell + (cell / 2), (step + 2) * cell + (cell / 2)) == color) {
+      halfObject = 0, side -= 1, step += 1; 
     } else {
-      if (getpixel(copyBuffer_0, (side + 2) * cell + (cell / 2), (step + 1) * cell + (cell / 2)) == 0xa0fded &&
-        getpixel(copyBuffer_0, (side + 2) * cell + (cell / 2), (step + 2) * cell + (cell / 2)) == 0xa0fded) {
-        halfObject = 0, step -= 1; //�������� ����� �� ����������� ������
+      if (getPixel(copyBuffer_0, (side + 2) * cell + (cell / 2), (step + 1) * cell + (cell / 2)) == color &&
+        getPixel(copyBuffer_0, (side + 2) * cell + (cell / 2), (step + 2) * cell + (cell / 2)) == color) {
+        halfObject = 0, step -= 1;
       }
 
     }

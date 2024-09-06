@@ -36,14 +36,14 @@ void keyboard() {
     numberTanks = numberTanks + 2;
     basinHeight = basinHeight + 73.4;
     ust();
-    for (int u = 0; u != 10000000; u++) {
-      u = u;
+    for (int i = 0; i != 10000000; i++) {
+      i = i;
     }
   }
 
   if (key[KEY_1_PAD]) {
-    for (int u = 0; u != 10000000; u++) {
-      u = u;
+    for (int i = 0; i != 10000000; i++) {
+      i = i;
     }
 
     numberTanks = numberTanks - 2;
@@ -52,22 +52,22 @@ void keyboard() {
   }
 
   if (key[KEY_8_PAD]) {
-    for (int u = 0; u != 100000; u++) {
-      u = u;
+    for (int i = 0; i != 100000; i++) {
+      i = i;
     }
     LL = LL + 0.01;
   }
 
   if (key[KEY_2_PAD]) {
-    for (int u = 0; u != 100000; u++) {
-      u = u;
+    for (int i = 0; i != 100000; i++) {
+      i = i;
     }
     LL = LL - 0.01;
   }
 
   if (key[KEY_9_PAD]) {
-    for (int u = 0; u != 10000000; u++) {
-      u = u;
+    for (int i = 0; i != 10000000; i++) {
+      i = i;
     }
     basinHeight = basinHeight + 0.3;
     ust1();
@@ -75,8 +75,8 @@ void keyboard() {
 
   if (key[KEY_3_PAD]) {
 
-    for (int u = 0; u != 10000000; u++) {
-      u = u;
+    for (int i = 0; i != 10000000; i++) {
+      i = i;
     }
 
     basinHeight = basinHeight - 0.3;
