@@ -5,7 +5,6 @@ void keyboard() {
 
   if (key[KEY_PLUS_PAD]) {
     if (surface < 0.98) {
-      //halfPiston=halfPiston - 0.01;
       surface = surface + 0.002;
       waterLevel = basinHeight * surface;
       basin();
@@ -13,9 +12,7 @@ void keyboard() {
   }
 
   if (key[KEY_MINUS_PAD]) {
-    //if(halfPiston>0.01){
     if (surface > 0.05) {
-      //halfPiston=halfPiston - 0.01;
       surface = surface - 0.002;
       waterLevel = basinHeight * surface;
       basin();
@@ -69,7 +66,6 @@ void keyboard() {
   }
 
   if (key[KEY_9_PAD]) {
-
     for (int u = 0; u != 10000000; u++) {
       u = u;
     }

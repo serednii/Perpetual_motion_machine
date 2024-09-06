@@ -1,4 +1,3 @@
-//����� ����� � �������
 void basin() {
   ///center  half
   rectfill(bufferBasin, 0, 0, basinWidth, basinHeight, 0xdcffff);

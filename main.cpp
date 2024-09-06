@@ -97,9 +97,7 @@ void pauseMs(int a) {
     return;
 }
 
-//void   generator();
 
-void barrel();
 
 #include "include/barrel.h"
 
@@ -141,7 +139,6 @@ int main() {
 
     keyboard();
     //waterLevel = basinHeight *0.75;
-    //barrel();
     basin();
 
     {
@@ -186,13 +183,11 @@ int main() {
           line(bufferBasin, center, paddingTopBottom + l_1, x + center, y + paddingTopBottom + l_1, 0xff0000);
           line(bufferBasin, x + center, y + paddingTopBottom + l_1, x + center - 25 * cos(rlk), y + paddingTopBottom + l_1 - 25 * sin(rlk), 0xff0000);
         }
-        ///************************************************************************************************
       }
     }
 
-    //************************************************************************************************
 
-    //if (numbers[0]<(barrelHeight-1)){
+
     {
       if (!pause) {
         for (int a = 0; a != numberTanks; a++) {
@@ -207,9 +202,8 @@ int main() {
         }
       }
     }
-    //}
 
-    draw_sprite(buffer, bufferBasin, 400, basinBottom); //kopy_buffer0<buffer0//�������� ����� � ��������� �����
+    draw_sprite(buffer, bufferBasin, 400, basinBottom); //copyBuffer_0<buffer0//�������� ����� � ��������� �����
 
     textprintf_ex(buffer_text, font, 10, 10, makecol(255, 100, 200), -1, "indentationBetweenBarrels: %d", indentationBetweenBarrels);
     textprintf_ex(buffer_text, font, 10, 20, makecol(255, 100, 200), -1, "basinHeight: %d", basinHeight);
@@ -253,7 +247,6 @@ int main() {
     masked_blit(buffer, screen, camera_x, camera_y, 0, 0, ancho, alto);
 
   }
-  // liberamos memoria
 
   destroy_bitmap(buffer);
   destroy_bitmap(bufferBasin);
@@ -261,30 +254,6 @@ int main() {
   destroy_bitmap(buffer_text);
 
   return 0;
-  /*while(!key[KEY_ESC])
-      {
-          int b = 0;
-  int h=0;
-  for (int angle=0; angle!=360; angle++){
-          if (key[KEY_ESC]){
-              return 0;
-          }
-          clear_to_color(buffer_text, 0xd0d00d);
-          textprintf_ex(buffer_text, font, 20, 10, makecol(255, 100, 200),-1, "angle: %d", angle);
-          b = angle*46666,6666;
-          rectfill(bufferBasin, 0, 0, basinWidth, basinHeight, 0xdcffff);
-          cout<< "angle = "<< angle<< endl;
-          rotate_sprite(bufferBasin,bufferBarrel[1],(700/2),(900/2),b);
-          //show_mouse(bufferBasin);
-          draw_sprite(bufferBasin, buffer_text, 200,300);
-          blit(bufferBasin,screen,0,0,0,0,700, 900);
-                  for (int c=0; c!=9996546; c ++)
-                  {
-                      h=h+c;
-                  }
-
-          }
-      }*/
 }
 
 END_OF_MAIN();
@@ -316,7 +285,6 @@ void ust1() {
   r_1 = 3.14 * 75 * 1.8;
   r_2 = r_1;
   circleLength = l_1 + l_2 + r_1 + r_2;
-  ///bufferBasin = create_bitmap(basinWidth, basinHeight);
   {
     int b = 1;
     for (int a = 0; a <= circleLength + 70; a = a + 68) {

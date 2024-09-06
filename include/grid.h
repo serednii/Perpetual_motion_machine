@@ -1,21 +1,23 @@
 void grid() {
-  int setka_x = KLITUNKA, setka_y = KLITUNKA;
-  int kolir_setka = 0x000000;
-  for (int a = setka_x + KLITUNKA; a <= setka_x + hurina - KLITUNKA; a += KLITUNKA) {
-    vline(buffer0, a, setka_y, setka_y + vusota, kolir_setka);
+  int column = cell, row = cell;
+  int gridColor = 0x000000;
+  for (int a = column + cell; a <= column + width - cell; a += cell) {
+    vline(buffer0, a, row, row + height, gridColor);
   }
 
-  for (int a = setka_y + KLITUNKA; a <= setka_y + vusota - KLITUNKA; a += KLITUNKA) {
-    hline(buffer0, setka_x, a, setka_x + hurina, kolir_setka);
+  for (int a = row + cell; a <= row + height - cell; a += cell) {
+    hline(buffer0, column, a, column + width, gridColor);
   }
-  rect(buffer0, setka_x, setka_y, setka_x + hurina, setka_y + vusota, 0x000000);
+  rect(buffer0, column, row, column + width, row + height, 0x000000);
 
-  for (int a = xx2 + KLITUNKA; a <= xx2 + hurina1 - KLITUNKA; a += KLITUNKA) {
-    vline(buffer, a, yy1, yy1 + vusota1, kolir_setka);
+  for (int a = xx2 + cell; a <= xx2 + width1 - cell; a += cell) {
+    vline(buffer, a, yy1, yy1 + height1, gridColor);
   }
 
-  for (int a = yy2 + KLITUNKA; a <= yy2 + vusota1 - KLITUNKA; a += KLITUNKA) {
-    hline(buffer, xx2, a, xx2 + hurina1, kolir_setka);
+  for (int a = yy2 + cell; a <= yy2 + height1 - cell; a += cell) {
+    hline(buffer, xx2, a, xx2 + width1, gridColor);
   }
-  rect(buffer, xx2, yy2, xx2 + hurina1, yy2 + vusota1, 0x000000);
+  
+  rect(buffer, xx2, yy2, xx2 + width1, yy2 + height1, 0x000000);
+
 }
