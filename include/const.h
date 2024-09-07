@@ -1,0 +1,12 @@
+const int BASIN_WIDTH = 700;
+const int BASIN_HEIGHT = 500;  // Висота басейну
+const int BARREL_HEIGHT = 80;
+const int BARREL_WIDTH = BARREL_HEIGHT * 0.6;
+const float WORKING_HEIGHT = BARREL_HEIGHT * 0.8;
+const float COEFF_INDENTATION = 0.5;
+const float INDENTATION_BETWEEN_BARRELS = BARREL_HEIGHT * COEFF_INDENTATION;
+const int PADDING = 300;
+const int CENTER = 350;
+const float Y = 1;
+const float Y_Height = BARREL_HEIGHT * 0.2;
+const float HALF_PISTON = 0.2;
