@@ -1,1 +1,1 @@
-## simulation of the work of a perpetual motion machine
+## Simulation of the work of a perpetual motion machine
