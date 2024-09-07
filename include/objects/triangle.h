@@ -93,11 +93,8 @@ void triangle(int x, int y, int half, int pole) {
 }
 
 
-int triangleCheck(int a, int b) 
-
-{
+int triangleCheck(int a, int b) {
 const int color = 0xa0fded;
-
 
   if (a == 0) 
 {

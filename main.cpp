@@ -76,7 +76,7 @@ void drawCircle(int x0, int y0, int radius) {
     r1 = r * g;
     x = x + 200 + (x0 * cos(r1) - y0 * sin(r1));
     y = y + 200 + (x0 * sin(r1) - y0 * cos(r1));
-    putPixel(bufferBasin, x, y, 0x000000);
+    _putpixel(bufferBasin, x, y, 0x000000);
   }
 }
 

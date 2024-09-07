@@ -85,7 +85,7 @@
 
 1552174556 d:\двигун\include\klaviatura.h
 
-1725652523 source:i:\driverworks\main.cpp
+1725694766 source:i:\driverworks\main.cpp
 	<iostream>
 	<allegro.h>
 	<cstdlib>
@@ -98,9 +98,9 @@
 	"include/basin.h"
 	"include/keyboard.h"
 
-1725653032 i:\driverworks\include\barrel.h
+1725656293 i:\driverworks\include\barrel.h
 
-1725652972 i:\driverworks\include\basin.h
+1725695268 i:\driverworks\include\basin.h
 
-1725652777 i:\driverworks\include\keyboard.h
+1725656293 i:\driverworks\include\keyboard.h
 

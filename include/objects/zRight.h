@@ -14,9 +14,7 @@ void zRight(int x, int y, int half, int pole) //Z_vpravo
     y = 2 + (cell * y);
   }
 
-  if (half == 0)
-
-  {
+  if (half == 0) {
     rectfill(copyBuffer_0, x, y, x + widthElement, y + widthElement, color);
     rectfill(copyBuffer_0, x + 2, y + 2, x + widthElement - 2, y + widthElement - 2, color1);
 
@@ -59,8 +57,7 @@ int zRightCheck(int a, int b)
 {
 
   const int color = color;
-  if (a == 0) 
-  {
+  if (a == 0)  {
 
     if (b == 0 || b == 10) { /
 
